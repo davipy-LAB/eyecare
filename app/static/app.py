@@ -23,6 +23,15 @@ async def read_root(request: Request):
         return HTMLResponse(tpl.read_text(encoding="utf-8"))
     return HTMLResponse("<h1>OnBoarding not found</h1>", status_code=404)
 
+@app.get("/dashboard", response_class=HTMLResponse)
+async def dashboard(request: Request):
+    """Return the dashboard.html file."""
+    base = Path(__file__).resolve().parents[2]  # project root (f:/eyecare)
+    tpl = base / "templates" / "dashboard.html"
+    if tpl.exists():
+        return HTMLResponse(tpl.read_text(encoding="utf-8"))
+    return HTMLResponse("<h1>Dashboard not found</h1>", status_code=404)
+
 # Exemplo de API para lógica de cores
 @app.get("/api/color-info/{color_id}")
 async def get_color(color_id: str):
