@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyecare - Acessibilidade Visual</title>
+    <link rel="stylesheet" href="static/css/onboarding.css">
+    <script src="https://unpkg.com/i18next@21.6.14/i18next.min.js"></script>
+</head>
+<body>
+    <div class="page-shell" id="onboarding">
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyecare-tag">Eyecare</p>
+                <h1 data-i18n="welcome">Bem-vindo ao Eyecare</h1>
+                <p class="hero-description" data-i18n="hero_description">Configure a sua experiência de acessibilidade e comece a cuidar da visão de forma simples.</p>
+            </div>
+            <div class="hero-actions">
+                <label for="language" class="label" data-i18n="select_language">Idioma</label>
+                <select id="language" class="select">
+                    <option value="en" >English</option>
+                    <option value="pt-BR">Português</option>
+                </select>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="card onboarding-card">
+                <div class="step-header">
+                    <span class="step-badge" id="step-display" data-i18n="step_1">Passo 1</span>
+                    <p class="step-info" data-i18n="step_info">Vamos configurar seu perfil de uso.</p>
+                </div>
+
+                <form id="onboarding-form" class="form-grid" novalidate>
+                    <fieldset class="step" id="step1">
+                        <legend class="step-title" data-i18n="welcome">Primeiros passos</legend>
+                        <p class="step-info" data-i18n="language_select">Use o seletor acima para escolher seu idioma preferido antes de continuar.</p>
+                    </fieldset>
+
+                    <fieldset class="step hidden" id="step2">
+                        <legend class="step-title" data-i18n="colorblind_question">Você é daltônico?</legend>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="colorblind" value="yes"> <span data-i18n="yes">Sim</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="colorblind" value="no"> <span data-i18n="no">Não</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="step hidden" id="step3">
+                        <legend class="step-title" data-i18n="colorblind_type">Qual tipo de daltonismo?</legend>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="type" value="protanopia"> <span data-i18n="protanopia">Protanopia</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="type" value="deuteranopia"> <span data-i18n="deuteranopia">Deuteranopia</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="type" value="tritanopia"> <span data-i18n="tritanopia">Tritanopia</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" id="previousButton" disabled data-i18n="back">Voltar</button>
+                        <button type="button" class="btn btn-primary" id="nextButton" data-i18n="next">Próximo</button>
+                    </div>
+                </form>
+
+                <div id="completion-panel" style="display: none;">
+                    <div class="step-header">
+                        <span class="step-badge" data-i18n="finish">Concluído</span>
+                        <h2 class="step-title">Tudo pronto!</h2>
+                        <p class="step-info">Suas preferências foram gravadas. Agora o Eyecare está ajustado para sua visão.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="sr-only" aria-hidden="true" style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="protanopia-filter">
+                <feColorMatrix type="matrix" values="0.567 0.433 0 0 0  0.558 0.442 0 0 0  0 0.242 0.758 0 0  0 0 0 1 0"/>
+            </filter>
+            <filter id="deuteranopia-filter">
+                <feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/>
+            </filter>
+            <filter id="tritanopia-filter">
+                <feColorMatrix type="matrix" values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <script src="static/js/onboarding.js"></script>
+</body>
+</html>

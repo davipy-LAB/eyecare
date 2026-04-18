@@ -16,12 +16,12 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
-    """Return the index.html file directly to avoid Jinja2 cache issues."""
+    """Return the OnBoarding.html file directly to avoid Jinja2 cache issues."""
     base = Path(__file__).resolve().parents[2]  # project root (f:/eyecare)
-    tpl = base / "templates" / "index.html"
+    tpl = base / "templates" / "OnBoarding.html"
     if tpl.exists():
         return HTMLResponse(tpl.read_text(encoding="utf-8"))
-    return HTMLResponse("<h1>Index not found</h1>", status_code=404)
+    return HTMLResponse("<h1>OnBoarding not found</h1>", status_code=404)
 
 # Exemplo de API para lógica de cores
 @app.get("/api/color-info/{color_id}")
