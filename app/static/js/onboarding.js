@@ -83,20 +83,13 @@ function showStep(step) {
     }
   }
   if (stepBadge) {
-    stepBadge.textContent = `Passo ${step}`;
+    stepBadge.textContent = i18next.t('step_' + step);
   }
   updateStepInterface();
 }
 
 function nextStep() {
   if (currentStep === 1) {
-    const languageSelect = document.getElementById('language');
-    const lang = languageSelect ? languageSelect.value : 'pt-BR';
-    i18next.changeLanguage(lang, () => {
-      updateContent();
-      updateStepInterface();
-    });
-    localStorage.setItem('language', lang);
     showStep(2);
     return;
   }
@@ -104,7 +97,7 @@ function nextStep() {
   if (currentStep === 2) {
     const selected = document.querySelector('input[name="colorblind"]:checked');
     if (!selected) {
-      alert('Por favor, selecione uma opção.');
+      alert(i18next.t('colorblind_question') + ' ' + i18next.t('yes') + '/' + i18next.t('no'));
       return;
     }
     localStorage.setItem('colorblind', selected.value);
@@ -119,7 +112,7 @@ function nextStep() {
   if (currentStep === 3) {
     const selected = document.querySelector('input[name="type"]:checked');
     if (!selected) {
-      alert('Por favor, selecione o tipo de daltonismo.');
+      alert(i18next.t('colorblind_type'));
       return;
     }
     localStorage.setItem('colorblindType', selected.value);
@@ -166,7 +159,7 @@ window.onload = function() {
   if (nextButton) nextButton.addEventListener('click', nextStep);
   if (goToDashboardButton) goToDashboardButton.addEventListener('click', () => window.location.href = '/dashboard');
 
-  const storedLang = localStorage.getItem('language') || 'pt-BR';
+  const storedLang = localStorage.getItem('language') || 'en';
   const onboardingComplete = localStorage.getItem(onboardingCompleteKey);
   const storedType = localStorage.getItem('colorblindType');
 
@@ -189,7 +182,17 @@ window.onload = function() {
     }
   });
 
-  // Atualiza o seletor de idioma visualmente
+  // Adiciona ouvinte para mudança de idioma imediata
   const languageSelect = document.getElementById('language');
-  if (languageSelect) languageSelect.value = storedLang;
+  if (languageSelect) {
+    languageSelect.addEventListener('change', function() {
+      const lang = this.value;
+      i18next.changeLanguage(lang, () => {
+        updateContent();
+        updateStepInterface();
+      });
+      localStorage.setItem('language', lang);
+    });
+    languageSelect.value = storedLang;
+  }
 };

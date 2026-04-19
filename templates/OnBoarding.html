@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +12,11 @@
         <header class="hero">
             <div class="hero-copy">
                 <p class="eyecare-tag">Eyecare</p>
-                <h1 data-i18n="welcome">Bem-vindo ao Eyecare</h1>
-                <p class="hero-description" data-i18n="hero_description">Configure a sua experiência de acessibilidade e comece a cuidar da visão de forma simples.</p>
+                <h1 data-i18n="welcome">Welcome to Eyecare</h1>
+                <p class="hero-description" data-i18n="hero_description">Configure your accessibility experience.</p>
             </div>
             <div class="hero-actions">
-                <label for="language" class="label" data-i18n="select_language">Idioma</label>
+                <label for="language" class="label" data-i18n="select_language">Select language:</label>
                 <select id="language" class="select">
                     <option value="en" >English</option>
                     <option value="pt-BR">Português</option>
@@ -27,30 +27,30 @@
         <main class="content">
             <section class="card onboarding-card">
                 <div class="step-header">
-                    <span class="step-badge" id="step-display" data-i18n="step_1">Passo 1</span>
-                    <p class="step-info" data-i18n="step_info">Vamos configurar seu perfil de uso.</p>
+                    <span class="step-badge" id="step-display" data-i18n="step_1">Step 1</span>
+                    <p class="step-info" data-i18n="step_info">Let's configure your usage profile.</p>
                 </div>
 
                 <form id="onboarding-form" class="form-grid" novalidate>
                     <fieldset class="step" id="step1">
-                        <legend class="step-title" data-i18n="welcome">Primeiros passos</legend>
-                        <p class="step-info" data-i18n="language_select">Use o seletor acima para escolher seu idioma preferido antes de continuar.</p>
+                        <legend class="step-title" data-i18n="welcome">First steps</legend>
+                        <p class="step-info" data-i18n="language_select">Select your preferred language to get started.</p>
                     </fieldset>
 
                     <fieldset class="step hidden" id="step2">
-                        <legend class="step-title" data-i18n="colorblind_question">Você é daltônico?</legend>
+                        <legend class="step-title" data-i18n="colorblind_question">Are you colorblind?</legend>
                         <div class="radio-group">
                             <label class="radio-label">
-                                <input type="radio" name="colorblind" value="yes"> <span data-i18n="yes">Sim</span>
+                                <input type="radio" name="colorblind" value="yes"> <span data-i18n="yes">Yes</span>
                             </label>
                             <label class="radio-label">
-                                <input type="radio" name="colorblind" value="no"> <span data-i18n="no">Não</span>
+                                <input type="radio" name="colorblind" value="no"> <span data-i18n="no">No</span>
                             </label>
                         </div>
                     </fieldset>
 
                     <fieldset class="step hidden" id="step3">
-                        <legend class="step-title" data-i18n="colorblind_type">Qual tipo de daltonismo?</legend>
+                        <legend class="step-title" data-i18n="colorblind_type">What type of colorblindness?</legend>
                         <div class="radio-group">
                             <label class="radio-label">
                                 <input type="radio" name="type" value="protanopia"> <span data-i18n="protanopia">Protanopia</span>
@@ -65,19 +65,19 @@
                     </fieldset>
 
                     <div class="button-group">
-                        <button type="button" class="btn btn-secondary" id="previousButton" disabled data-i18n="back">Voltar</button>
-                        <button type="button" class="btn btn-primary" id="nextButton" data-i18n="next">Próximo</button>
+                        <button type="button" class="btn btn-secondary" id="previousButton" disabled data-i18n="back">Back</button>
+                        <button type="button" class="btn btn-primary" id="nextButton" data-i18n="next">Next</button>
                     </div>
                 </form>
 
                 <div id="completion-panel" style="display: none;">
                     <div class="step-header">
-                        <span class="step-badge" data-i18n="finish">Concluído</span>
-                        <h2 class="step-title">Tudo pronto!</h2>
-                        <p class="step-info">Suas preferências foram gravadas. Agora o Eyecare está ajustado para sua visão.</p>
+                        <span class="step-badge" data-i18n="finish">Completed</span>
+                        <h2 class="step-title" data-i18n="completion_title">All set!</h2>
+                        <p class="step-info" data-i18n="completion_text">Your preferences are saved. Eyecare is now tuned for your sight.</p>
                     </div>
                     <div class="button-group">
-                        <button type="button" class="btn btn-primary" id="goToDashboard" data-i18n="go_to_dashboard">Ir para Dashboard</button>
+                        <button type="button" class="btn btn-primary" id="goToDashboard" data-i18n="go_to_dashboard">Go to Dashboard</button>
                     </div>
                 </div>
             </section>

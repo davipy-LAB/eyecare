@@ -201,7 +201,7 @@ fieldset {
 }
 
 .step-title {
-    margin: 0;
+    margin-bottom: 18px;
     color: var(--text-strong);
     font-size: 1.35rem;
 }
