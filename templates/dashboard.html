@@ -4,29 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eyecare - Dashboard</title>
-    <link rel="stylesheet" href="static/css/onboarding.css">
+    <link rel="icon" href="/static/img/Eyecare.png" type="image/png">
+    <link rel="stylesheet" href="static/css/dashboard.css">
 </head>
 <body>
     <div class="page-shell">
-        <header class="hero">
-            <div class="hero-copy">
-                <p class="eyecare-tag">Eyecare</p>
-                <h1>Dashboard</h1>
-                <p class="hero-description">Bem-vindo ao seu painel de controle de acessibilidade visual.</p>
+        <header class="dashboard-header">
+            <div class="dashboard-brand">
+                <div class="eyecare-tag">Eyecare</div>
+                <div>
+                    <h1>Dashboard</h1>
+                    <p class="dashboard-subtitle">Painel de controle da sua experiência de acessibilidade.</p>
+                </div>
             </div>
-            <div class="hero-actions">
-                <button id="reset-onboarding" class="btn btn-secondary">Reiniciar Onboarding</button>
+            <div class="dashboard-links">
+                <a href="https://www.linkedin.com/in/daviddiasdesouza" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+                <a href="https://github.com/daviddiasdesouza" target="_blank" rel="noreferrer noopener">GitHub</a>
+                <a href="#" target="_blank" rel="noreferrer noopener">Currículo</a>
             </div>
         </header>
 
-        <main class="content">
-            <section class="card">
-                <h2>Configurações Atuais</h2>
-                <p>Idioma: <span id="current-lang">Português</span></p>
-                <p>Tipo de Daltonismo: <span id="current-type">Nenhum</span></p>
-                <p>Filtro Aplicado: <span id="current-filter">Nenhum</span></p>
-            </section>
-        </main>
+        <div class="dashboard-grid">
+            <aside class="sidebar">
+                <div class="sidebar-title">Explorar</div>
+                <button class="sidebar-item active" data-view="chroma">Chroma</button>
+                <button class="sidebar-item" data-view="aprendizado">Aprendizado</button>
+                <button class="sidebar-item" data-view="auto-cuidado">Auto-Cuidado</button>
+            </aside>
+
+            <main class="dashboard-main">
+                <section class="dashboard-panel">
+                    <div class="dashboard-card summary-card">
+                        <div class="summary-header">
+                            <div>
+                                <h2>Configurações Atuais</h2>
+                                <p class="summary-text">Resumo dos dados carregados do onboarding para ajudar você a ajustar a experiência.</p>
+                            </div>
+                            <button id="reset-onboarding" class="btn btn-secondary">Reiniciar Onboarding</button>
+                        </div>
+                        <div class="settings-grid">
+                            <div class="settings-item">
+                                <span class="settings-label">Idioma</span>
+                                <strong id="current-lang">Português</strong>
+                            </div>
+                            <div class="settings-item">
+                                <span class="settings-label">Daltonismo</span>
+                                <strong id="current-type">Nenhum</strong>
+                            </div>
+                            <div class="settings-item">
+                                <span class="settings-label">Filtro</span>
+                                <strong id="current-filter">Nenhum</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dashboard-content" class="dashboard-card content-card">
+                        <h2 id="content-title">Chroma</h2>
+                        <p id="content-description">Use esta área para explorar ajustes de cor, contraste e paleta sensível às suas preferências de visão. Escolha uma opção na sidebar para ver mais detalhes.</p>
+                        <div class="content-details" id="content-details"></div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer class="dashboard-footer">
+            <p>Davi Dias de Souza — autoria e design</p>
+        </footer>
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" class="sr-only" aria-hidden="true" style="position: absolute; width: 0; height: 0;">

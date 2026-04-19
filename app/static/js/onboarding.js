@@ -54,11 +54,36 @@ const i18nResources = {
       completion_title: 'All set!',
       completion_text: 'Your preferences are saved. Eyecare is now tuned for your sight.'
     }
+  },
+  de: {
+    translation: {
+      welcome: 'Willkommen bei Eyecare',
+      select_language: 'Sprache auswählen:',
+      next: 'Weiter',
+      back: 'Zurück',
+      finish: 'Fertigstellen',
+      go_to_dashboard: 'Zum Dashboard',
+      colorblind_question: 'Sind Sie farbenblind?',
+      yes: 'Ja',
+      no: 'Nein',
+      colorblind_type: 'Welche Art von Farbenblindheit?',
+      protanopia: 'Protanopie',
+      deuteranopia: 'Deuteranopie',
+      tritanopia: 'Tritanopie',
+      hero_description: 'Konfigurieren Sie Ihre Barrierefreiheitserfahrung.',
+      step_1: 'Schritt 1',
+      step_2: 'Schritt 2',
+      step_3: 'Schritt 3',
+      step_info: 'Lassen Sie uns Ihr Nutzungsprofil konfigurieren.',
+      language_select: 'Wählen Sie Ihre bevorzugte Sprache, um loszulegen.',
+      completion_title: 'Alles bereit!',
+      completion_text: 'Ihre Präferenzen wurden gespeichert. Eyecare ist jetzt auf Ihre Sicht abgestimmt.'
+    }
   }
 };
 
 // 3. Declare as referências dos elementos (serão preenchidas no window.onload)
-let formElement, completionPanel, stepBadge, previousButton, nextButton, goToDashboardButton;
+let formElement, completionPanel, stepBadge, previousButton, nextButton, goToDashboardButton, onboardingCard;
 
 function updateContent() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -129,6 +154,7 @@ function previousStep() {
 
 function finishOnboarding() {
   localStorage.setItem(onboardingCompleteKey, 'true');
+  if (onboardingCard) onboardingCard.style.display = 'none';
   if (formElement) formElement.style.display = 'none';
   if (completionPanel) {
     completionPanel.style.display = 'grid';
@@ -149,6 +175,7 @@ window.onload = function() {
   // Captura os elementos do DOM agora que a página carregou
   formElement = document.getElementById('onboarding-form');
   completionPanel = document.getElementById('completion-panel');
+  onboardingCard = document.querySelector('.onboarding-card');
   stepBadge = document.getElementById('step-display');
   previousButton = document.getElementById('previousButton');
   nextButton = document.getElementById('nextButton');

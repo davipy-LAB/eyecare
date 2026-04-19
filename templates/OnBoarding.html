@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eyecare - Acessibilidade Visual</title>
+    <link rel="icon" href="/static/img/Eyecare.png" type="image/png">
     <link rel="stylesheet" href="static/css/onboarding.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/i18next@21.6.14/i18next.min.js"></script>
 </head>
 <body>
@@ -20,6 +22,7 @@
                 <select id="language" class="select">
                     <option value="en" >English</option>
                     <option value="pt-BR">Português</option>
+                    <option value="de">Deutsch</option>
                 </select>
             </div>
         </header>
@@ -69,18 +72,18 @@
                         <button type="button" class="btn btn-primary" id="nextButton" data-i18n="next">Next</button>
                     </div>
                 </form>
-
-                <div id="completion-panel" style="display: none;">
-                    <div class="step-header">
-                        <span class="step-badge" data-i18n="finish">Completed</span>
-                        <h2 class="step-title" data-i18n="completion_title">All set!</h2>
-                        <p class="step-info" data-i18n="completion_text">Your preferences are saved. Eyecare is now tuned for your sight.</p>
-                    </div>
-                    <div class="button-group">
-                        <button type="button" class="btn btn-primary" id="goToDashboard" data-i18n="go_to_dashboard">Go to Dashboard</button>
-                    </div>
-                </div>
             </section>
+
+            <div id="completion-panel" class="completion-panel" style="display: none;">
+                <div class="step-header">
+                    <span class="step-badge" data-i18n="finish">Completed</span>
+                    <h2 class="step-title" data-i18n="completion_title">All set!</h2>
+                    <p class="step-info" data-i18n="completion_text">Your preferences are saved. Eyecare is now tuned for your sight.</p>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-primary" id="goToDashboard" data-i18n="go_to_dashboard">Go to Dashboard</button>
+                </div>
+            </div>
         </main>
     </div>
 
