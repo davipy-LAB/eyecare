@@ -92,7 +92,11 @@ const dashboardI18nResources = {
             aprendizado_title: 'Aprendizado',
             aprendizado_description: 'Conteúdo educativo para ajudar o usuário a reaprender as cores e entender melhor as opções de acessibilidade e como usá-las.',
             'auto-cuidado_title': 'Auto-Cuidado',
-            'auto-cuidado_description': 'Acompanhe rotinas de descanso visual e sugestões de autocuidado adaptadas às suas preferências para promover uma relação mais saudável com a tecnologia.'
+            'auto-cuidado_description': 'Acompanhe rotinas de descanso visual e sugestões de autocuidado adaptadas às suas preferências para promover uma relação mais saudável com a tecnologia.',
+            reset_confirm_title: 'Confirmação de Reset',
+            reset_confirm_text: 'Tem certeza de que deseja reiniciar a personalização? Isso irá apagar suas preferências atuais e levá-lo de volta ao início.',
+            cancel: 'Cancelar',
+            confirm_reset_action: 'Confirmar'
         }
     },
     en: {
@@ -146,6 +150,10 @@ const dashboardI18nResources = {
             aprendizado_title: 'Learning',
             aprendizado_description: 'Educational content to help users relearn colors and better understand accessibility options and how to use them.',
             color_teaching: 'Relearn Colors',
+            reset_confirm_title: 'Reset Confirmation',
+            reset_confirm_text: 'Are you sure you want to reset the onboarding? This will delete your current preferences and take you back to the beginning.',
+            cancel: 'Cancel',
+            confirm_reset_action: 'Confirm'
         }
     },
     de: {
@@ -198,6 +206,10 @@ const dashboardI18nResources = {
             aprendizado_description: 'Bildungsinhalte, um Benutzern zu helfen, Farben neu zu lernen und Barrierefreiheitsoptionen besser zu verstehen und wie man sie verwendet.',
             color_teaching: 'Farben neu lernen',
             color_teaching_text: 'Bildungsinhalte, um Benutzern zu helfen, Farben neu zu lernen und Barrierefreiheitsoptionen besser zu verstehen und wie man sie verwendet.',
+            reset_confirm_title: 'Bestätigung zurücksetzen',
+            reset_confirm_text: 'Sind Sie sicher, dass Sie das Onboarding zurücksetzen möchten? Dadurch werden Ihre aktuellen Präferenzen gelöscht und Sie kehren zum Anfang zurück.',
+            cancel: 'Abbrechen',
+            confirm_reset_action: 'Bestätigen'
         }
     }
 };
@@ -282,15 +294,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    resetButton.addEventListener('click', function() {
-        localStorage.removeItem('onboardingComplete');
-        localStorage.removeItem('colorblind');
-        localStorage.removeItem('colorblindType');
-        localStorage.removeItem('language');
-        localStorage.removeItem('dashboardView');
-        document.body.style.filter = '';
-        window.location.href = '/';
-    });
+    // Elementos do Modal
+const resetModal = document.getElementById('reset-modal');
+const btnOpenReset = document.getElementById('reset-onboarding');
+const btnCancelReset = document.getElementById('cancel-reset');
+const btnConfirmReset = document.getElementById('confirm-reset');
+
+// Abrir o modal ao clicar no botão principal de reset
+btnOpenReset.addEventListener('click', () => {
+    resetModal.classList.remove('hidden');
+});
+
+// Fechar o modal se o usuário cancelar
+btnCancelReset.addEventListener('click', () => {
+    resetModal.classList.add('hidden');
+});
+
+// Fechar se o usuário clicar fora do card (no overlay)
+resetModal.addEventListener('click', (e) => {
+    if (e.target === resetModal) {
+        resetModal.classList.add('hidden');
+    }
+});
+
+// Executar o reset REAL apenas aqui
+btnConfirmReset.addEventListener('click', () => {
+    // Remove os dados do LocalStorage
+    localStorage.removeItem('onboardingComplete');
+    localStorage.removeItem('colorblind');
+    localStorage.removeItem('colorblindType');
+    localStorage.removeItem('language'); // Opcional: resetar idioma também
+    
+    // Feedback visual antes de recarregar (opcional)
+    btnConfirmReset.textContent = "Resetando...";
+    
+    // Redireciona para o onboarding
+    window.location.href = '/'; 
+});
 
     // Configurar seletor de idioma
     const languageSelect = document.getElementById('dashboard-language');

@@ -79,7 +79,21 @@
             <p data-i18n="author">Davi Dias de Souza — autoria e design</p>
         </footer>
     </div>
-
+    <div id="reset-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+        <div class="modal-header">
+            <img src="static/img/icons/config/circle-exclamation-solid-full.svg" alt="Alert" class="warning-icon">
+            <h3 data-i18n="reset_confirm_title">Confirmar Reset</h3>
+        </div>
+        <p class="modal-text" data-i18n="reset_confirm_text">
+            Isso irá apagar todas as suas preferências de acessibilidade e idioma. Você terá que configurar tudo novamente.
+        </p>
+        <div class="modal-actions">
+            <button id="cancel-reset" class="btn btn-secondary" data-i18n="cancel">Cancelar</button>
+            <button id="confirm-reset" class="btn btn-danger" data-i18n="confirm_reset_action">Sim, resetar tudo</button>
+        </div>
+    </div>
+</div>
     <svg xmlns="http://www.w3.org/2000/svg" class="sr-only" aria-hidden="true" style="position: absolute; width: 0; height: 0;">
         <defs>
             <filter id="protanopia-filter">
