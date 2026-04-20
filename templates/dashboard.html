@@ -13,23 +13,31 @@
             <div class="dashboard-brand">
                 <div class="eyecare-tag">Eyecare</div>
                 <div>
-                    <h1>Dashboard</h1>
-                    <p class="dashboard-subtitle">Painel de controle da sua experiência de acessibilidade.</p>
+                    <h1 data-i18n="dashboard_title">Dashboard</h1>
+                    <p class="dashboard-subtitle" data-i18n="dashboard_subtitle">Painel de controle da sua experiência de acessibilidade.</p>
                 </div>
             </div>
             <div class="dashboard-links">
-                <a href="https://www.linkedin.com/in/daviddiasdesouza" target="_blank" rel="noreferrer noopener">LinkedIn</a>
-                <a href="https://github.com/daviddiasdesouza" target="_blank" rel="noreferrer noopener">GitHub</a>
-                <a href="#" target="_blank" rel="noreferrer noopener">Currículo</a>
+                <a href="https://www.linkedin.com/in/davi-dias-de-souza-5337872a6/" target="_blank" rel="noreferrer noopener"><img class="inline-icon" src="/static/img/icons/social media/linkedin-brands-solid-full.svg" alt="LinkedIn"><span data-i18n="linkedin">LinkedIn</span></a>
+                <a href="https://github.com/davipy-lab" target="_blank" rel="noreferrer noopener"><img class="inline-icon" src="/static/img/icons/social media/github-brands-solid-full.svg" alt="GitHub"><span data-i18n="github">GitHub</span></a>
+                <a href="https://interactivecv.vercel.app/" target="_blank" rel="noreferrer noopener"><img class="inline-icon" src="/static/img/icons/curriculum/file-regular-full.svg" alt="Curriculum"><span data-i18n="resume">Currículo</span></a>
+            </div>
+            <div class="dashboard-language">
+                <label for="dashboard-language" class="language-label" data-i18n="language">Language</label>
+                <select id="dashboard-language" class="language-select">
+                    <option value="en">English</option>
+                    <option value="pt-BR">Português</option>
+                    <option value="de">Deutsch</option>
+                </select>
             </div>
         </header>
 
         <div class="dashboard-grid">
             <aside class="sidebar">
-                <div class="sidebar-title">Explorar</div>
-                <button class="sidebar-item active" data-view="chroma">Chroma</button>
-                <button class="sidebar-item" data-view="aprendizado">Aprendizado</button>
-                <button class="sidebar-item" data-view="auto-cuidado">Auto-Cuidado</button>
+                <div class="sidebar-title" data-i18n="explore">Explorar</div>
+                <button class="sidebar-item active" data-view="chroma" data-i18n="chroma">Chroma</button>
+                <button class="sidebar-item" data-view="aprendizado" data-i18n="aprendizado">Aprendizado</button>
+                <button class="sidebar-item" data-view="auto-cuidado" data-i18n="auto-cuidado">Auto-Cuidado</button>
             </aside>
 
             <main class="dashboard-main">
@@ -37,22 +45,22 @@
                     <div class="dashboard-card summary-card">
                         <div class="summary-header">
                             <div>
-                                <h2>Configurações Atuais</h2>
-                                <p class="summary-text">Resumo dos dados carregados do onboarding para ajudar você a ajustar a experiência.</p>
+                                <h2 data-i18n="current_settings">Configurações Atuais</h2>
+                                <p class="summary-text" data-i18n="settings_summary">Resumo dos dados carregados do onboarding para ajudar você a ajustar a experiência.</p>
                             </div>
-                            <button id="reset-onboarding" class="btn btn-secondary">Reiniciar Onboarding</button>
+                            <button id="reset-onboarding" class="btn btn-secondary" data-i18n="reset_onboarding">Reiniciar Onboarding</button>
                         </div>
                         <div class="settings-grid">
                             <div class="settings-item">
-                                <span class="settings-label">Idioma</span>
+                                <span class="settings-label" data-i18n="language">Idioma</span>
                                 <strong id="current-lang">Português</strong>
                             </div>
                             <div class="settings-item">
-                                <span class="settings-label">Daltonismo</span>
+                                <span class="settings-label" data-i18n="colorblind">Daltonismo</span>
                                 <strong id="current-type">Nenhum</strong>
                             </div>
                             <div class="settings-item">
-                                <span class="settings-label">Filtro</span>
+                                <span class="settings-label" data-i18n="filter">Filtro</span>
                                 <strong id="current-filter">Nenhum</strong>
                             </div>
                         </div>
@@ -68,7 +76,7 @@
         </div>
 
         <footer class="dashboard-footer">
-            <p>Davi Dias de Souza — autoria e design</p>
+            <p data-i18n="author">Davi Dias de Souza — autoria e design</p>
         </footer>
     </div>
 
@@ -86,6 +94,7 @@
         </defs>
     </svg>
 
+    <script src="https://unpkg.com/i18next@21.6.14/i18next.min.js"></script>
     <script src="static/js/dashboard.js"></script>
 </body>
 </html>
