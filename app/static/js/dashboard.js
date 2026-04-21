@@ -367,3 +367,44 @@ btnConfirmReset.addEventListener('click', () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const openBtn = document.getElementById('openSettings');
+    const closeBtn = document.getElementById('closeSettings');
+    const overlay = document.getElementById('settingsOverlay');
+
+    if (openBtn && overlay) {
+        openBtn.addEventListener('click', () => {
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            updateMobileSettings(); // Atualiza os dados ao abrir
+        });
+    }
+
+    if (closeBtn && overlay) {
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    overlay?.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+function updateMobileSettings() {
+    const lang = localStorage.getItem('language') || 'pt-BR';
+    const type = localStorage.getItem('colorblindType');
+    
+    const m_lang = document.getElementById('mobile-current-lang');
+    const m_type = document.getElementById('mobile-current-type');
+    const m_filter = document.getElementById('mobile-current-filter');
+
+    if (m_lang) m_lang.textContent = lang === 'pt-BR' ? 'Português' : 'English';
+    if (m_type) m_type.textContent = type ? i18next.t(type) : i18next.t('no');
+    if (m_filter) m_filter.textContent = type ? i18next.t(type) : i18next.t('none');
+}
