@@ -66,6 +66,7 @@ const dashboardI18nResources = {
             portuguese: 'Português',
             english: 'English',
             german: 'Deutsch',
+            settings: 'Configurações',
             chroma_title: 'Chroma',
             chroma_description: 'Use esta área para explorar ajustes de cor e contraste pensados para melhorar a percepção visual de modo acessível.',
             dynamic_contrast: 'Contraste Dinâmico',
@@ -107,6 +108,7 @@ const dashboardI18nResources = {
             chroma: 'Chroma',
             aprendizado: 'Learning',
             'auto-cuidado': 'Self-Care',
+            settings: 'Settings',
             current_settings: 'Current Settings',
             settings_summary: 'Summary of data loaded from onboarding to help you adjust the experience.',
             reset_onboarding: 'Reset Onboarding',
@@ -164,6 +166,7 @@ const dashboardI18nResources = {
             chroma: 'Chroma',
             aprendizado: 'Lernen',
             'auto-cuidado': 'Selbstfürsorge',
+            settings: 'Einstellungen',
             current_settings: 'Aktuelle Einstellungen',
             settings_summary: 'Zusammenfassung der Daten aus dem Onboarding, um Ihnen bei der Anpassung der Erfahrung zu helfen.',
             reset_onboarding: 'Onboarding zurücksetzen',
@@ -404,7 +407,20 @@ function updateMobileSettings() {
     const m_type = document.getElementById('mobile-current-type');
     const m_filter = document.getElementById('mobile-current-filter');
 
-    if (m_lang) m_lang.textContent = lang === 'pt-BR' ? 'Português' : 'English';
-    if (m_type) m_type.textContent = type ? i18next.t(type) : i18next.t('no');
-    if (m_filter) m_filter.textContent = type ? i18next.t(type) : i18next.t('none');
+    // Traduz o Idioma pegando do seu dicionário
+    if (m_lang) {
+        if (lang === 'pt-BR') m_lang.textContent = i18next.t('portuguese');
+        else if (lang === 'en') m_lang.textContent = i18next.t('english');
+        else if (lang === 'de') m_lang.textContent = i18next.t('german');
+    }
+    
+    // Traduz o tipo de daltonismo ou retorna "No" (Não)
+    if (m_type) {
+        m_type.textContent = type ? i18next.t(type) : i18next.t('no');
+    }
+    
+    // Traduz o filtro ativo ou retorna "None" (Nenhum)
+    if (m_filter) {
+        m_filter.textContent = type ? i18next.t(type) : i18next.t('none');
+    }
 }

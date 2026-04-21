@@ -21,7 +21,7 @@
                 <a href="https://www.linkedin.com/in/davi-dias-de-souza-5337872a6/" target="_blank" rel="noreferrer noopener"><img class="inline-icon" src="/static/img/icons/social media/linkedin-brands-solid-full.svg" alt="LinkedIn"><span data-i18n="linkedin">LinkedIn</span></a>
                 <a href="https://github.com/davipy-lab" target="_blank" rel="noreferrer noopener"><img class="inline-icon" src="/static/img/icons/social media/github-brands-solid-full.svg" alt="GitHub"><span data-i18n="github">GitHub</span></a>
                 <a href="https://interactivecv.vercel.app/" target="_blank" rel="noreferrer noopener"><img class="inline-icon" src="/static/img/icons/curriculum/file-regular-full.svg" alt="Curriculum"><span data-i18n="resume">Currículo</span></a>
-                <button class="mobile-settings-btn" id="openSettings" aria-label="Configurações">
+                <button class="mobile-settings-btn" id="openSettings" type="button" aria-label="Configurações">
                     <img src="/static/img/icons/config/gear-solid-full.svg" alt="Configurações" class="inline-icon">
                     <span class="btn-text">Configurações</span>
                 </button>
@@ -100,27 +100,31 @@
 </div>
 <div class="mobile-settings-overlay hidden" id="settingsOverlay">
     <div class="mobile-settings-panel">
-        <div class="mobile-settings-header">
-            <h3 data-i18n="current_settings_title">Configurações Atuais</h3>
-            <button id="closeSettings">&times;</button>
+        <div class="panel-header">
+            <h2 data-i18n="current_settings">Configurações Atuais</h2>
+            <button class="close-settings" id="closeSettings">
+                <img src="/static/img/icons/config/circle-xmark-solid-full.svg" alt="Fechar" style="width: 20px; height: 20px; filter: invert(1);">
+            </button>
         </div>
-        <div class="mobile-settings-body">
-            <div class="settings-grid">
-                <div class="setting-item">
-                    <span class="setting-label" data-i18n="language_label">Idioma</span>
-                    <span class="setting-value" id="mobile-current-lang">Português</span>
-                </div>
-                <div class="setting-item">
-                    <span class="setting-label" data-i18n="colorblind_label">Daltônico</span>
-                    <span class="setting-value" id="mobile-current-type">Não</span>
-                </div>
-                <div class="setting-item">
-                    <span class="setting-label" data-i18n="filter_label">Filtro Ativo</span>
-                    <span class="setting-value" id="mobile-current-filter">Nenhum</span>
-                </div>
+        
+        <p class="panel-desc" data-i18n="settings_summary">Resumo dos dados carregados do onboarding...</p>
+        
+        <div class="settings-summary-list">
+            <div class="setting-item">
+                <span class="setting-label" data-i18n="language">Idioma</span>
+                <span class="setting-value" id="mobile-current-lang">Português</span>
             </div>
-            <button class="btn btn-danger" style="width: 100%; margin-top: 20px;" onclick="document.getElementById('reset-modal').classList.remove('hidden')">Resetar Preferências</button>
+            <div class="setting-item">
+                <span class="setting-label" data-i18n="colorblind">Daltonismo</span>
+                <span class="setting-value" id="mobile-current-type">Não</span>
+            </div>
+            <div class="setting-item">
+                <span class="setting-label" data-i18n="filter">Filtro Ativo</span>
+                <span class="setting-value" id="mobile-current-filter">Nenhum</span>
+            </div>
         </div>
+        
+        <button class="btn btn-danger" style="width: 100%; margin-top: 20px;" onclick="document.getElementById('reset-modal').classList.remove('hidden')" data-i18n="reset_onboarding">Resetar Preferências</button>
     </div>
 </div>
     <svg xmlns="http://www.w3.org/2000/svg" class="sr-only" aria-hidden="true" style="position: absolute; width: 0; height: 0;">
