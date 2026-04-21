@@ -14,14 +14,16 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/", response_class=HTMLResponse, methods=["GET", 'HEAD'])
+@app.api_route("/", response_class=HTMLResponse, methods=["GET", "HEAD"])
 async def read_root(request: Request):
     """Return the OnBoarding.html file directly to avoid Jinja2 cache issues."""
-    base = Path(__file__).resolve().parents[2]  # project root (f:/eyecare)
+    # Use caminhos relativos mais robustos para o ambiente Linux do Render
+    base = Path(__file__).resolve().parent.parent.parent # Ajusta para subir os níveis corretos
     tpl = base / "templates" / "OnBoarding.html"
+    
     if tpl.exists():
         return HTMLResponse(tpl.read_text(encoding="utf-8"))
-    return HTMLResponse("<h1>OnBoarding not found</h1>", status_code=404)
+    return HTMLResponse(f"<h1>OnBoarding not found at {tpl}</h1>", status_code=404)
 
 @app.get("/dashboard", response_class=HTMLResponse)
 async def dashboard(request: Request):
