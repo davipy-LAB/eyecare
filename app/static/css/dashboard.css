@@ -507,21 +507,39 @@ body::before {
     }
 
     .mobile-settings-btn {
-        display: flex !important; /* O flex ajuda a alinhar o ícone + texto */
-        align-items: center;
-        gap: 8px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--border);
-        padding: 8px 16px;
-        border-radius: 12px;
-        cursor: pointer;
-        color: var(--text-strong);
-    }
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent; /* Começa sem fundo como os links */
+    border: 1px solid var(--border); /* Mantemos a borda para destacar que é um botão de ação */
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    /* Padronização da Fonte */
+    color: var(--text-muted); /* Começa discreto como os outros */
+    font-family: inherit;     /* Força a herdar a "Inter" do body */
+    font-size: 0.9rem;        /* Mesma escala dos links */
+    font-weight: 500;         /* Mesmo peso dos links */
+    transition: all 0.2s ease;
+}
 
-
+/* Hover padronizado com os links */
 .mobile-settings-btn:hover {
-    transform: translateY(-1px);
-    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-strong);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: none; /* Removemos o pulinho para não divergir dos outros */
+}
+
+/* Ajuste na imagem dentro do botão para alinhar com os outros ícones */
+.mobile-settings-btn img {
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.mobile-settings-btn:hover img {
+    opacity: 1;
 }
 
 /* O container que escurece o fundo */
