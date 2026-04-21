@@ -14,7 +14,7 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse, methods=["GET", 'HEAD'])
 async def read_root(request: Request):
     """Return the OnBoarding.html file directly to avoid Jinja2 cache issues."""
     base = Path(__file__).resolve().parents[2]  # project root (f:/eyecare)
