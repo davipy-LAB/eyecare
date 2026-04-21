@@ -668,4 +668,8 @@ body::before {
     background: rgba(255, 255, 255, 0.2);
     transform: rotate(90deg);
 }
+
+.summary-card {
+        display: none !important;
+    }
 }
