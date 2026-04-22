@@ -406,6 +406,7 @@ function updateMobileSettings() {
     const m_lang = document.getElementById('mobile-current-lang');
     const m_type = document.getElementById('mobile-current-type');
     const m_filter = document.getElementById('mobile-current-filter');
+    const filter = localStorage.getItem('currentFilter');
 
     // Traduz o Idioma pegando do seu dicionário
     if (m_lang) {
@@ -421,6 +422,6 @@ function updateMobileSettings() {
     
     // Traduz o filtro ativo ou retorna "None" (Nenhum)
     if (m_filter) {
-        m_filter.textContent = type ? i18next.t(type) : i18next.t('none');
+        m_filter.textContent = filter ? i18next.t(filter) : i18next.t('none');
     }
 }
