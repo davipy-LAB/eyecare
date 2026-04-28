@@ -34,12 +34,47 @@ async def dashboard(request: Request):
         return HTMLResponse(tpl.read_text(encoding="utf-8"))
     return HTMLResponse("<h1>Dashboard not found</h1>", status_code=404)
 
-# Exemplo de API para lógica de cores
-@app.get("/api/color-info/{color_id}")
-async def get_color(color_id: str):
-    return {"id": color_id, "name": "Vermelho", "tip": "Dica visual para daltônicos"}
+@app.get('/dashboard/dynamic-contrast', response_class=HTMLResponse)
+async def dynamic_contrast(request: Request):
+    """Return the dynamic-contrast.html file."""
+    base = Path(__file__).resolve().parents[2]  # project root (f:/eyecare)
+    tpl = base / "templates" / "DynamicContrast.html"
+    if tpl.exists():
+        return HTMLResponse(tpl.read_text(encoding="utf-8") , status_code=200)
+    return HTMLResponse("<h1>Dynamic Contrast not found</h1>", status_code=404)
 
+@app.get('/dashboard/sensitive-palette', response_class=HTMLResponse)
+async def sensitive_palette(request: Request):
+    """Return the sensitive-palette.html file."""
+    base = Path(__file__).resolve().parents[2]  # project root (f:/eyecare)
+    tpl = base / "templates" / "SensitivePalette.html"
+    if tpl.exists():
+        return HTMLResponse(tpl.read_text(encoding="utf-8") , status_code=200)
+    return HTMLResponse("<h1>Sensitive Palette not found</h1>", status_code=404)
 
-@app.get("/ping")
-async def ping():
-    return JSONResponse({"status": "ok"})
+@app.get('/dashboard/vision-tips', response_class=HTMLResponse)
+async def vision_tips(request: Request):
+    """Return the vision-tips.html file."""
+    base = Path(__file__).resolve().parents[2]  # project root (f:/eyecare)
+    tpl = base / "templates" / "VisionTips.html"
+    if tpl.exists():
+        return HTMLResponse(tpl.read_text(encoding="utf-8") , status_code=200)
+    return HTMLResponse("<h1>Vision Tips not found</h1>", status_code=404)
+
+@app.get('/dashboard/relearn-colors', response_class=HTMLResponse)
+async def relearn_colors(request: Request):
+    """Return the relearn-colors.html file."""
+    base = Path(__file__).resolve().parents[2]  # project root (f:/eyecare)
+    tpl = base / "templates" / "RelearnColors.html"
+    if tpl.exists():
+        return HTMLResponse(tpl.read_text(encoding="utf-8"), status_code=200)
+    return HTMLResponse("<h1>Relearn Colors not found</h1>", status_code=404)
+
+@app.get('/dashboard/ideal-environment', response_class=HTMLResponse)
+async def ideal_environment(request: Request):
+    """Return the ideal-environment.html file."""
+    base = Path(__file__).resolve().parents[2]  # project root (f:/eyecare)
+    tpl = base / "templates" / "IdealEnvironment.html"
+    if tpl.exists():
+        return HTMLResponse(tpl.read_text(encoding="utf-8") , status_code=200)
+    return HTMLResponse("<h1>Ideal Environment not found</h1>", status_code=404)

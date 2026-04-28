@@ -1,16 +1,18 @@
 // Dashboard script
-const dashboardViews = {
+const dashboardViews = { 
     chroma: {
         title: 'Chroma',
         description: 'Use esta área para explorar ajustes de cor e contraste pensados para melhorar a percepção visual de modo acessível.',
         blocks: [
             {
                 title: 'Contraste Dinâmico',
-                text: 'Ajustes de contraste para equilibrar a leitura entre fundo e texto sem perder a suavidade visual.'
+                text: 'Ajustes de contraste para equilibrar a leitura entre fundo e texto sem perder a suavidade visual.',
+                url: '/dashboard/dynamic-contrast'
             },
             {
                 title: 'Paleta Sensível',
-                text: 'Seleções de cores cuidadosas que preservam acessibilidade para diferentes tipos de visão.'
+                text: 'Seleções de cores cuidadosas que preservam acessibilidade para diferentes tipos de visão.',
+                url: '/dashboard/sensitive-palette'
             }
         ]
     },
@@ -20,11 +22,13 @@ const dashboardViews = {
         blocks: [
             {
                 title: 'Dicas de Visão',
-                text: 'Recomendações sobre como aproveitar melhor os recursos do Eyecare em diferentes ambientes.'
+                text: 'Recomendações sobre como aproveitar melhor os recursos do Eyecare em diferentes ambientes.',
+                url: '/dashboard/vision-tips'
             },
             {
                 title: 'Reaprenda as Cores',
-                text: 'Conteúdo educativo para ajudar o usuário a reaprender as cores e entender melhor as opções de acessibilidade e como usá-las.'
+                text: 'Conteúdo educativo para ajudar o usuário a reaprender as cores e entender melhor as opções de acessibilidade e como usá-las.',
+                url: '/dashboard/relearn-colors'
             }
         ]
     },
@@ -34,11 +38,13 @@ const dashboardViews = {
         blocks: [
             {
                 title: 'Pausas Programadas',
-                text: 'Lembretes para fazer pequenas pausas e relaxar os olhos durante o uso prolongado da tela.'
+                text: 'Lembretes para fazer pequenas pausas e relaxar os olhos durante o uso prolongado da tela.',
+                url: '#'
             },
             {
                 title: 'Ambiente Ideal',
-                text: 'Conselhos para controlar brilho, temperatura de cor e ergonomia do espaço de trabalho.'
+                text: 'Conselhos para controlar brilho, temperatura de cor e ergonomia do espaço de trabalho.',
+                url: '/dashboard/ideal-environment'
             }
         ]
     }
@@ -97,7 +103,16 @@ const dashboardI18nResources = {
             reset_confirm_title: 'Confirmação de Reset',
             reset_confirm_text: 'Tem certeza de que deseja reiniciar a personalização? Isso irá apagar suas preferências atuais e levá-lo de volta ao início.',
             cancel: 'Cancelar',
-            confirm_reset_action: 'Confirmar'
+            confirm_reset_action: 'Confirmar',
+            "access_feature": "Acessar Feature",
+            "view_extension": "Ver Extensão",
+            "dynamic_contrast": "Contraste Dinâmico",
+            "dynamic_contrast_text": "Ajustes de contraste para equilibrar a leitura entre fundo e texto...",
+            "sensitive_palette": "Paleta Sensível",
+            "sensitive_palette_text": "Seleções de cores cuidadosas que preservam acessibilidade...",
+            "protanopia": "Protanopia",
+            "deuteranopia": "Deuteranopia",
+            "tritanopia": "Tritanopia"
         }
     },
     en: {
@@ -155,7 +170,16 @@ const dashboardI18nResources = {
             reset_confirm_title: 'Reset Confirmation',
             reset_confirm_text: 'Are you sure you want to reset the onboarding? This will delete your current preferences and take you back to the beginning.',
             cancel: 'Cancel',
-            confirm_reset_action: 'Confirm'
+            confirm_reset_action: 'Confirm',
+            "access_feature": "Access Feature",
+            "view_extension": "View Extension",
+            "dynamic_contrast": "Dynamic Contrast",
+            "dynamic_contrast_text": "Contrast adjustments to balance reading between background and text...",
+            "sensitive_palette": "Sensitive Palette",
+            "sensitive_palette_text": "Careful color selections that preserve accessibility...",
+            "protanopia": "Protanopia",
+            "deuteranopia": "Deuteranopia",
+            "tritanopia": "Tritanopia"
         }
     },
     de: {
@@ -212,7 +236,16 @@ const dashboardI18nResources = {
             reset_confirm_title: 'Bestätigung zurücksetzen',
             reset_confirm_text: 'Sind Sie sicher, dass Sie das Onboarding zurücksetzen möchten? Dadurch werden Ihre aktuellen Präferenzen gelöscht und Sie kehren zum Anfang zurück.',
             cancel: 'Abbrechen',
-            confirm_reset_action: 'Bestätigen'
+            confirm_reset_action: 'Bestätigen',
+            "access_feature": "Feature zugreifen",
+            "view_extension": "Erweiterung anzeigen",
+            "dynamic_contrast": "Dynamischer Kontrast",
+            'dynamic_contrast_text': 'Kontrastanpassungen, um das Lesen zwischen Hintergrund und Text auszugleichen...',
+            "sensitive_palette_text": "Sorgfaltige Farbauswahlen, die die Zugänglichkeit...",
+            "sensitive_palette": "Empfindliche Palette",
+            "protanopia": "Protanopie",
+            "deuteranopia": "Deuteranopie",
+            "tritanopia": "Tritanopie"
         }
     }
 };
@@ -247,10 +280,31 @@ document.addEventListener('DOMContentLoaded', function() {
         updateDashboardContent();
         renderView(chosenView);
 
-        // Atualizar configurações atuais após i18next estar pronto
-        currentLang.textContent = lang === 'pt-BR' ? i18next.t('portuguese') : lang === 'de' ? i18next.t('german') : i18next.t('english');
-        currentType.textContent = colorblind === 'yes' ? (type ? type : i18next.t('yes')) : i18next.t('no');
-        currentFilter.textContent = type ? type : i18next.t('none');
+        const currentType = localStorage.getItem('colorblindType') || 'no'; 
+        const currentFilter = localStorage.getItem('currentFilter') || 'none';
+
+        const typeElement = document.getElementById('current-type');
+        const filterElement = document.getElementById('current-filter');
+
+        const lang = localStorage.getItem('language') || 'en';
+        if (currentLang) {
+            if (lang === 'pt-BR') currentLang.textContent = i18next.t('portuguese');
+            else if (lang === 'en') currentLang.textContent = i18next.t('english');
+            else if (lang === 'de') currentLang.textContent = i18next.t('german');
+        }
+
+        if (typeElement) {
+            // Se o valor for 'deuteranopia', o i18next busca a tradução 'Deuteranopia'
+            typeElement.textContent = i18next.t(currentType.toLowerCase());
+        }
+        
+        if (filterElement) {
+            // Se o valor for 'protanopia', o i18next busca a tradução
+            filterElement.textContent = i18next.t(currentFilter.toLowerCase());
+        }
+        
+        // Aproveite e chame a função mobile também para atualizar tudo de uma vez
+        updateMobileSettings();
     });
 
     if (type) {
@@ -281,16 +335,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
         contentDetails.innerHTML = view.blocks.map(block => {
             const blockKey = blockKeyMap[block.title] || block.title.toLowerCase().replace(/\s+/g, '_');
+            
+            // Define qual chave de tradução usar para o botão
+            const btnTranslationKey = block.title === 'Pausas Programadas' ? 'view_extension' : 'access_feature';
+
+            const buttonHtml = block.url 
+                ? `<a href="${block.url}" class="btn-feature">
+                    <span data-i18n="${btnTranslationKey}">${i18next.t(btnTranslationKey)}</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                   </a>` 
+                : '';
+
             return `
             <div class="content-block">
-                <h3>${i18next.t(blockKey)}</h3>
-                <p>${i18next.t(blockKey + '_text')}</p>
+                <div class="block-info">
+                    <h3 data-i18n="${blockKey}">${i18next.t(blockKey)}</h3>
+                    <p data-i18n="${blockKey}_text">${i18next.t(blockKey + '_text')}</p>
+                </div>
+                ${buttonHtml}
             </div>
         `}).join('');
 
         localStorage.setItem('dashboardView', viewKey);
     }
-
     sidebarButtons.forEach(button => {
         button.addEventListener('click', function() {
             renderView(this.dataset.view);
