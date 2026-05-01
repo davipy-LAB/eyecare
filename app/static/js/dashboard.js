@@ -1,3 +1,5 @@
+
+
 // Dashboard script
 const dashboardViews = { 
     chroma: {
@@ -245,7 +247,7 @@ const dashboardI18nResources = {
             "sensitive_palette": "Empfindliche Palette",
             "protanopia": "Protanopie",
             "deuteranopia": "Deuteranopie",
-            "tritanopia": "Tritanopie"
+            "tritanopia": "Tritanopie",
         }
     }
 };
@@ -256,7 +258,9 @@ function updateDashboardContent() {
         el.textContent = i18next.t(key);
     });
 }
-
+function syncSettings() {
+    applyAccessibilitySettings();
+}
 document.addEventListener('DOMContentLoaded', function() {
     const currentLang = document.getElementById('current-lang');
     const currentType = document.getElementById('current-type');
@@ -272,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const type = localStorage.getItem('colorblindType');
     const chosenView = localStorage.getItem('dashboardView') || 'chroma';
 
+    // 1. FUNÇÃO DE APLICAÇÃO GLOBAL
     // Inicializar i18next
     i18next.init({
         lng: lang,
@@ -279,37 +284,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }, function() {
         updateDashboardContent();
         renderView(chosenView);
+        syncSettings();
 
-        const currentType = localStorage.getItem('colorblindType') || 'no'; 
-        const currentFilter = localStorage.getItem('currentFilter') || 'none';
+       const storedType = localStorage.getItem('colorblindType') || 'no'; 
+        const storedFilter = localStorage.getItem('currentFilter') || 'none';
+        const storedLang = localStorage.getItem('language') || 'en';
 
-        const typeElement = document.getElementById('current-type');
-        const filterElement = document.getElementById('current-filter');
-
-        const lang = localStorage.getItem('language') || 'en';
         if (currentLang) {
-            if (lang === 'pt-BR') currentLang.textContent = i18next.t('portuguese');
-            else if (lang === 'en') currentLang.textContent = i18next.t('english');
-            else if (lang === 'de') currentLang.textContent = i18next.t('german');
+            if (storedLang === 'pt-BR') currentLang.textContent = i18next.t('portuguese');
+            else if (storedLang === 'en') currentLang.textContent = i18next.t('english');
+            else if (storedLang === 'de') currentLang.textContent = i18next.t('german');
         }
 
-        if (typeElement) {
-            // Se o valor for 'deuteranopia', o i18next busca a tradução 'Deuteranopia'
-            typeElement.textContent = i18next.t(currentType.toLowerCase());
+        if (currentType) {
+            currentType.textContent = i18next.t(storedType.toLowerCase());
         }
         
-        if (filterElement) {
-            // Se o valor for 'protanopia', o i18next busca a tradução
-            filterElement.textContent = i18next.t(currentFilter.toLowerCase());
+        if (currentFilter) {
+            currentFilter.textContent = i18next.t(storedFilter.toLowerCase());
         }
         
-        // Aproveite e chame a função mobile também para atualizar tudo de uma vez
         updateMobileSettings();
     });
 
-    if (type) {
-        document.body.style.filter = `url('#${type}-filter')`;
-    }
+// Chame syncSettings() dentro do seu window.onload ou i18next.init
 
     function renderView(viewKey) {
         const view = dashboardViews[viewKey];

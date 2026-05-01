@@ -140,12 +140,14 @@ function nextStep() {
       alert(i18next.t('colorblind_type'));
       return;
     }
+    // Salva o tipo e também marca como o filtro atual para o Dashboard
     localStorage.setItem('colorblindType', selected.value);
+    localStorage.setItem('currentFilter', selected.value); 
+    
     applyFilter(selected.value);
     finishOnboarding();
   }
 }
-
 function previousStep() {
   if (currentStep > 1) {
     showStep(currentStep - 1);

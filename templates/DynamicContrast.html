@@ -11,8 +11,8 @@
     <div class="page-shell">
         <header class="dashboard-header" style="align-items: center;">
             <div class="dashboard-brand">
-                <div class="eyecare-tag">Feature</div>
-                <h1 style="font-size: 2rem;">Título da Feature</h1>
+                <div class="eyecare-tag">EYECARE</div>
+                <h1 style="font-size: 2rem;" data-i18n="dynamic_contrast_title"></h1>
             </div>
             <div class="dashboard-links">
                 <a href="/dashboard" class="btn btn-secondary" style="border-radius: 12px;">Voltar ao Dashboard</a>
@@ -21,8 +21,39 @@
 
         <main class="dashboard-card" style="margin-top: 20px;">
             <h2>Configure sua experiência</h2>
-            <p class="text-muted">Aqui vai o conteúdo da feature...</p>
-        </main>
+            <p class="text-muted">Ajuste o equilíbrio entre fundo e texto para reduzir a fadiga ocular.</p>
+
+        <div class="control-group" style="margin-top: 30px;">
+            <label for="contrast-slider">Intensidade do Contraste: <span id="contrast-value">100</span>%</label>
+            <input type="range" id="contrast-slider" min="100" max="130" value="100" class="slider" style="width: 100%; margin: 15px 0;">
+        
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>Modo Conforto (Sépia/Suave)</span>
+                <input type="checkbox" id="comfort-mode">
+            </div>
+        </div>
+
+        <div id="preview-area" style="margin-top: 30px; padding: 20px; border-radius: 12px; border: 1px solid #ddd;">
+            <h3>Texto de Exemplo</h3>
+            <p>Este texto serve para você testar como o contraste afeta a leitura. Perceba como o equilíbrio evita que o branco "agrida" os olhos.</p>
+        </div>
+    </main>
     </div>
+    <script src="https://unpkg.com/i18next@21.6.14/i18next.min.js"></script>
+    <script src="/static/js/acessibilidade.js"></script>
+    <script src="/static/js/dynamic-contrast.js"></script>
+    <svg xmlns="http://www.w3.org/2000/svg" class="sr-only" aria-hidden="true" style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="protanopia-filter">
+                <feColorMatrix type="matrix" values="0.567 0.433 0 0 0  0.558 0.442 0 0 0  0 0.242 0.758 0 0  0 0 0 1 0"/>
+            </filter>
+            <filter id="deuteranopia-filter">
+                <feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/>
+            </filter>
+            <filter id="tritanopia-filter">
+                <feColorMatrix type="matrix" values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0"/>
+            </filter>
+        </defs>
+    </svg>
 </body>
 </html>

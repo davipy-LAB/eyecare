@@ -12,6 +12,7 @@
     --text-strong: #f8fafc;
     --text-muted: #94a3b8;
     --shadow: 0 32px 70px rgba(0, 0, 0, 0.25);
+    --text-color: #333333;
 }
 
 * {
@@ -27,11 +28,28 @@ body {
 }
 
 body {
+    color: var(--text-color);
+    transition: color 0.2s ease;
+}
+
+body {
     margin: 0;
     color: var(--text-strong);
     background: radial-gradient(circle at top, rgba(56, 189, 248, 0.08), transparent 22%),
                 radial-gradient(circle at bottom left, rgba(74, 222, 128, 0.06), transparent 18%),
                 linear-gradient(180deg, #020406 0%, #07101d 100%);
+}
+
+/* Quando o Modo Conforto estiver ativo, altera apenas as variáveis de texto */
+body.comfort-mode .page-shell {
+    filter: sepia(0.25) brightness(0.95);
+    transition: filter 0.3s ease;
+}
+
+/* Suaviza as cores das fontes no modo conforto */
+body.comfort-mode {
+    --text-strong: #f0e6d2; 
+    --text-muted: #bab0a0;
 }
 
 .hidden {
