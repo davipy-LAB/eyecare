@@ -1029,3 +1029,91 @@ body::before {
         color: var(--text-muted);
     }
 }
+
+/* =========================================
+   RESPONSIVIDADE: TABLETS E SMARTPHONES
+   (Refinado para DynamicContrast e Dashboard)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Header Global e Dynamic Contrast */
+    .dashboard-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 24px 20px;
+        gap: 20px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Expande os botões (como o "Voltar ao Dashboard") para ocupar a tela toda */
+    .dashboard-links {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .dashboard-links .btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 2. Respiros da página principal */
+    .page-shell {
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .dashboard-card {
+        padding: 20px;
+    }
+
+    /* 3. Cards de Configuração (Modo Conforto e Contraste) */
+    .settings-summary-list {
+        gap: 16px;
+    }
+
+    /* Força a coluna para sobrescrever o "style" inline do HTML */
+    .setting-item-vertical .setting-info {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px;
+    }
+
+    /* Empilha o texto e o switch do Modo Conforto */
+    .setting-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 16px;
+    }
+
+    /* Joga o Switch (chavinha) para a esquerda no mobile */
+    .setting-item .switch {
+        align-self: flex-start;
+        margin-top: 4px;
+    }
+
+    .setting-value {
+        font-size: 1.1rem;
+    }
+
+    /* 4. Área de Preview */
+    .preview-box {
+        padding: 20px;
+        margin-top: 24px;
+    }
+}
+
+/* Ajustes finos para celulares menores */
+@media (max-width: 480px) {
+    .dashboard-header h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .setting-label {
+        font-size: 0.9rem;
+    }
+}
