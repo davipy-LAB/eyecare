@@ -20,24 +20,39 @@
         </header>
 
         <main class="dashboard-card" style="margin-top: 20px;">
-            <h2>Configure sua experiência</h2>
-            <p class="text-muted">Ajuste o equilíbrio entre fundo e texto para reduzir a fadiga ocular.</p>
+    <div class="panel-header" style="margin-bottom: 24px;">
+        <h2 data-i18n="settings_title"  class="visual-settings">Ajustes Visuais</h2>
+        <div class="card-subtitle-settings">
+            <p class="panel-desc" data-i18n="settings_subtitle">Personalize o contraste e o tom da tela para o seu conforto.</p>
+        </div>
+    </div>
 
-        <div class="control-group" style="margin-top: 30px;">
-            <label for="contrast-slider">Intensidade do Contraste: <span id="contrast-value">100</span>%</label>
-            <input type="range" id="contrast-slider" min="100" max="130" value="100" class="slider" style="width: 100%; margin: 15px 0;">
-        
-            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-                <span>Modo Conforto (Sépia/Suave)</span>
-                <input type="checkbox" id="comfort-mode">
+    <div class="settings-summary-list">
+        <div class="setting-item-vertical">
+            <div class="setting-info" style="flex-direction: row; justify-content: space-between; margin-bottom: 10px;">
+                <span class="setting-label" data-i18n="contrast">Intensidade do Contraste</span>
+                <span class="setting-value"><span id="contrast-value">100</span>%</span>
             </div>
+            <input type="range" id="contrast-slider" min="100" max="130" value="100" class="custom-slider">
         </div>
 
-        <div id="preview-area" style="margin-top: 30px; padding: 20px; border-radius: 12px; border: 1px solid #ddd;">
-            <h3>Texto de Exemplo</h3>
-            <p>Este texto serve para você testar como o contraste afeta a leitura. Perceba como o equilíbrio evita que o branco "agrida" os olhos.</p>
+        <div class="setting-item">
+            <div class="setting-info">
+                <span class="setting-label" data-i18n="comfort_mode">Modo Conforto</span>
+                <p class="text-muted" style="font-size: 0.85rem; margin: 4px 0 0 0;" data-i18n="comfort_desc">Reduz a luz azul com tons de sépia suaves.</p>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="comfort-mode">
+                <span class="slider-toggle"></span>
+            </label>
         </div>
-    </main>
+    </div>
+
+    <div id="preview-area" class="preview-box">
+        <h3 data-i18n="explain_title" style="margin-top: 0; color: var(--primary);">Visualização em Tempo Real</h3>
+        <p data-i18n="explain_content" style="margin-bottom: 0;">Este texto ajuda a perceber como as mudanças afetam a legibilidade. O objetivo é reduzir o esforço visual durante longos períodos de leitura.</p>
+    </div>
+</main>
     </div>
     <script src="https://unpkg.com/i18next@21.6.14/i18next.min.js"></script>
     <script src="/static/js/acessibilidade.js"></script>

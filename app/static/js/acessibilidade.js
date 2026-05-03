@@ -1,17 +1,24 @@
 function applyAccessibilitySettings() {
-    const contrast = localStorage.getItem('eye-contrast') || '100';
+    const contrast = parseInt(localStorage.getItem('eye-contrast') || '100', 10);
     const comfort = localStorage.getItem('comfort-mode') === 'true';
     const colorblindType = localStorage.getItem('colorblindType');
 
-    const cbFilter = (
+    const hasColorblindFilter =
         colorblindType &&
         colorblindType !== 'no' &&
-        colorblindType !== 'none'
-    ) ? `url('#${colorblindType}-filter') ` : '';
+        colorblindType !== 'none';
 
-    document.body.style.filter = `${cbFilter}contrast(${contrast}%)`;
+    const cbFilter = hasColorblindFilter
+        ? `url('#${colorblindType}-filter') `
+        : '';
+
+    // Compensação: reduz a intensidade quando há filtro de daltonismo
+    const effectiveContrast = hasColorblindFilter
+        ? 100 + ((contrast - 100) * 0.05)
+        : contrast;
+
+    document.body.style.filter =
+        `${cbFilter}contrast(${effectiveContrast}%)`;
 
     document.body.classList.toggle('comfort-mode', comfort);
 }
-
-document.addEventListener('DOMContentLoaded', applyAccessibilitySettings);
