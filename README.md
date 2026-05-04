@@ -59,7 +59,7 @@ https://github.com/user-attachments/assets/e7af4a57-c627-4fe8-b015-b4642b2999ca
 
 ## 👨‍💻 Author
 
-Developed by **Davi Dias** - 🐙 [GitHub](https://github.com/davipy-lab)
+Developed by **Davi Dias** - 🖥️ [GitHub](https://github.com/davipy-lab)
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/davi-dias-de-souza-5337872a6/)
 
@@ -99,7 +99,7 @@ O EyeCare já está no ar. Você pode acessar a demo e testar todas as funcional
 - **SVG Filters**: Tecnologia utilizada para a simulação e correção precisa de cores.
 
 ### Backend:
-- **FastAPI (Python)**: Framework de alta performance para servir a aplicação.
+- **FastAPI (Python)**: Framework de alta performance assíncrona para servir a aplicação.
 - **Uvicorn**: Servidor para execução do ambiente de produção.
 
 ---
@@ -108,7 +108,7 @@ O EyeCare já está no ar. Você pode acessar a demo e testar todas as funcional
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **Davi Dias** - 🐙 [GitHub](https://github.com/davipy-lab)
+Desenvolvido por **Davi Dias** - 🖥️ [GitHub](https://github.com/davipy-lab)
 - 💼 [LinkedIn](https://www.linkedin.com/in/davi-dias-de-souza-5337872a6/)
 
 ---
