@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "EyeCare Extension",
+  "version": "1.0",
+  "description": "A Chrome extension to simulate color blindness filters on web pages.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
