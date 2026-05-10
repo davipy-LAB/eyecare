@@ -1,0 +1,18 @@
+{
+  "app_name": "EyeCare",
+  "filters_title": "Filtres visuels",
+  "filter_none": "Aucun",
+  "filter_protanopia": "Protanopie",
+  "filter_deuteranopia": "Deuteranopie",
+  "filter_tritanopia": "Tritanopie",
+  "pause_title": "Pauses programmées",
+  "pause_desc": " Règle 20-20-20 contre la fatigue ",
+  "next_pause": " Prochaine pause dans {{minutes}} min ",
+  "status_active": "Statut : Actif",
+  "notification_title": {
+    "message": "C'est l'heure de reposer vos yeux ! 🌿"
+  },
+  "notification_message": {
+    "message": "Regardez un objet situé à 6 mètres de vous pendant 20 secondes."
+  }
+}

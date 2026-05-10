@@ -1,0 +1,18 @@
+{
+  "app_name": "EyeCare",
+  "filters_title": "Visual Filters",
+  "filter_none": "None",
+  "filter_protanopia": "Protanopia",
+  "filter_deuteranopia": "Deuteranopia",
+  "filter_tritanopia": "Tritanopia",
+  "pause_title": "Scheduled Breaks",
+  "pause_desc": "20-20-20 Rule for Eye Strain",
+  "next_pause": "Next break in {{minutes}} min",
+  "status_active": "Status: Active",
+  "notification_title": {
+    "message": "Time to rest your eyes! 🌿"
+  },
+  "notification_message": {
+    "message": "Look at something 6 meters away for 20 seconds."
+  }
+}

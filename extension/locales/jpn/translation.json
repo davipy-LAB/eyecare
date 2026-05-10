@@ -1,0 +1,18 @@
+{
+  "app_name": "EyeCare",
+  "filters_title": "視覚フィルター",
+  "filter_none": "なし",
+  "filter_protanopia": "赤緑色覚異常",
+  "filter_deuteranopia": "緑青色覚異常",
+  "filter_tritanopia": "青赤色覚異常",
+  "pause_title": "スケジュールされた休憩",
+  "pause_desc": "目の疲れに対する20-20-20ルール",
+  "next_pause": "次の休憩は{{minutes}}分後",
+  "status_active": "ステータス: 有効",
+  "notification_title": {
+    "message": "目を休める時間です！🌿"
+  },
+  "notification_message": {
+    "message": "6メートル先にあるものを20秒間見つめてください。"
+  }
+}

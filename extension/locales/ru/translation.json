@@ -1,0 +1,18 @@
+{
+  "app_name": "EyeCare",
+  "filters_title": "Визуальные фильтры",
+  "filter_none": "Нет",
+  "filter_protanopia": "Протанопия",
+  "filter_deuteranopia": "Дейтеранопия",
+  "filter_tritanopia": "Тританопия",
+  "pause_title": "Запланированные паузы",
+  "pause_desc": "Правило 20-20-20 для борьбы с усталостью",
+  "next_pause": "Следующая пауза через {{minutes}} мин",
+  "status_active": "Статус: Активен",
+  "notification_title": {
+    "message": "Пора дать отдых глазам! 🌿"
+  },
+  "notification_message": {
+    "message": "Посмотрите на что-нибудь, находящееся на расстоянии 6 метров, в течение 20 секунд."
+  }
+}

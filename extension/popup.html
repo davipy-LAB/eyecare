@@ -8,21 +8,53 @@
   <div class="container">
     <header class="header">
       <span class="eyecare-tag">EyeCare</span>
-      <h1 class="title">Filtros Visuais</h1>
+      <h1 class="title" data-i18n="filters_title">Filtros Visuais</h1>
     </header>
 
+    <div class="language-selection">
+      <select id="language-select" class="language-select">
+        <option value="en">English</option>
+        <option value="pt">Português</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+        <option value="ru">Русский</option>
+        <option value="jpn">日本語</option>
+      </select>
+    </div>
+
     <div class="filter-grid">
-      <button id="none" class="filter-btn">Nenhum</button>
-      <button id="protanopia" class="filter-btn">Protanopia</button>
-      <button id="deuteranopia" class="filter-btn">Deuteranopia</button>
-      <button id="tritanopia" class="filter-btn">Tritanopia</button>
+      <button id="none" class="filter-btn" data-i18n="filter_none">Nenhum</button>
+      <button id="protanopia" class="filter-btn" data-i18n="filter_protanopia">Protanopia</button>
+      <button id="deuteranopia" class="filter-btn" data-i18n="filter_deuteranopia">Deuteranopia</button>
+      <button id="tritanopia" class="filter-btn" data-i18n="filter_tritanopia">Tritanopia</button>
+    </div>
+
+    <div class="settings-card">
+        <div class="setting-header">
+            <div class="setting-info">
+                <span class="setting-title" data-i18n="pause_title">Pausas Programadas</span>
+                <span class="setting-desc" data-i18n="pause_desc">Regra 20-20-20 para fadiga ocular</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="pause-switch">
+                <span class="slider"></span>
+            </label>
+        </div>
+  
+        <div id="timer-container" class="timer-badge hidden">
+            <span class="timer-dot"></span>
+            <span id="timer-display" class="timer-text">Calculando...</span>
+        </div>
     </div>
 
     <footer class="footer">
       <span>v1.0.0</span>
-      <span>Status: Ativo</span>
+      <span class="status" data-i18n="status_active">Status: Ativo</span>
     </footer>
   </div>
+  <script src="lib/i18next.min.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

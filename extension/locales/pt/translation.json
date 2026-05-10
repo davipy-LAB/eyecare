@@ -1,0 +1,18 @@
+{
+  "app_name": "EyeCare",
+  "filters_title": "Filtros Visuais",
+  "filter_none": "Nenhum",
+  "filter_protanopia": "Protanopia",
+  "filter_deuteranopia": "Deuteranopia",
+  "filter_tritanopia": "Tritanopia",
+  "pause_title": "Pausas Programadas",
+  "pause_desc": "Regra 20-20-20 para fadiga ocular",
+  "next_pause": "Próxima pausa em {{minutes}} min",
+  "status_active": "Status: Ativo",
+  "notification_title": {
+    "message": "Hora de descansar os olhos! 🌿"
+  },
+  "notification_message": {
+    "message": "Olhe para algo a 6 metros de distância por 20 segundos."
+  }
+}
