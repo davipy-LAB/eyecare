@@ -34,6 +34,17 @@
             "english": "Inglese",
             "german": "Tedesco",
             "settings": "Impostazioni",
+            "aprendizado": "Apprendimento",
+            "auto-cuidado": "Auto-cura",
+            "aprendizado_title": "Apprendimento",
+            "aprendizado_description": "Contenuti educativi per aiutare gli utenti a comprendere meglio le opzioni di accessibilità e come utilizzarle.",
+            "auto-cuidado_title": "Auto-cura",
+            "auto-cuidado_description": "Segui le routine di riposo degli occhi e i suggerimenti per la cura di sé personalizzati in base alle tue preferenze.",
+            "spanish": "Spagnolo",
+            "italian": "Italiano",
+            "french": "Francese",
+            "russian": "Russo",
+            "japanese": "Giapponese",
             "chroma_title": "Chroma",
             "chroma_description": "Utilizza quest'area per esplorare le regolazioni di colore e contrasto progettate per migliorare la percezione visiva in modo accessibile.",
             "dynamic_contrast": "Contrasto dinamico",
@@ -73,5 +84,6 @@
             "comfort_mode": "Modalità comfort",
             "comfort_desc": "Riduce la luce blu con tenui tonalità seppia.",
             "explain_title": "Anteprima in tempo reale",
-            "explain_desc": "Questo testo aiuta a spiegare in che modo queste modifiche influiscono sulla leggibilità. L'obiettivo è ridurre l'affaticamento degli occhi durante lunghe sessioni di lettura."
+            "explain_content": "Questo testo aiuta a spiegare in che modo queste modifiche influiscono sulla leggibilità. L'obiettivo è ridurre l'affaticamento degli occhi durante lunghe sessioni di lettura.",
+            "back_to_dashboard": "Torna alla dashboard"
 }

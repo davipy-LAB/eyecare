@@ -35,6 +35,17 @@
             "german": "Deutsch",
             "settings": "Einstellungen",
             "chroma_title": "Chroma",
+            "aprendizado": "Lernen",
+            "auto-cuidado": "Selbstfürsorge",
+            "aprendizado_title": "Lernen",
+            "aprendizado_description": "Lehrinhalte, die den Nutzern helfen, die Barrierefreiheitsoptionen und deren Anwendung besser zu verstehen.",
+            "auto-cuidado_title": "Selbstfürsorge",
+            "auto-cuidado_description": "Befolgen Sie auf Ihre Vorlieben zugeschnittene Routinen zur Augenentspannung und Vorschläge zur Selbstfürsorge.",
+            "spanish": "Spanisch",
+            "italian": "Italienisch",
+            "french": "Französisch",
+            "russian": "Russisch",
+            "japanese": "Japanisch",
             "chroma_description": "In diesem Bereich können Sie Farb- und Kontrasteinstellungen ausprobieren, die darauf ausgelegt sind, die visuelle Wahrnehmung auf barrierefreie Weise zu verbessern.",
             "dynamic_contrast": "Dynamischer Kontrast",
             "dynamic_contrast_text": "Kontrasteinstellungen, um das Gleichgewicht zwischen Hintergrund und Text beim Lesen zu optimieren, ohne die visuelle Flüssigkeit zu beeinträchtigen.",
@@ -73,5 +84,6 @@
             "comfort_mode": "Komfortmodus",
             "comfort_desc": "Reduziert blaues Licht durch sanfte Sepia-Töne.",
             "explain_title": "Echtzeit-Vorschau",
-            "explain_desc": "Dieser Text erklärt, wie sich diese Änderungen auf die Lesbarkeit auswirken. Das Ziel ist es, die Belastung der Augen bei langen Lese-Sitzungen zu verringern."
+            "explain_content": "Dieser Text erklärt, wie sich diese Änderungen auf die Lesbarkeit auswirken. Das Ziel ist es, die Belastung der Augen bei langen Lese-Sitzungen zu verringern.",
+            "back_to_top": "Zurück nach oben"
 }

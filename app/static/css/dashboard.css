@@ -1117,3 +1117,260 @@ body::before {
         font-size: 0.9rem;
     }
 }
+
+/* =========================================
+   DYNAMIC CONTRAST — RESPONSIVE FINAL FIX
+   ========================================= */
+
+.dynamic-contrast-page .page-shell {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding-inline: clamp(16px, 4vw, 32px);
+}
+
+.dynamic-contrast-page .dashboard-header,
+.dynamic-contrast-page .dashboard-card {
+    width: 100%;
+}
+
+.dynamic-contrast-page .dashboard-header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.dynamic-contrast-page .dashboard-brand {
+    min-width: 0;
+}
+
+.dynamic-contrast-page .dashboard-header h1,
+.dynamic-contrast-page .panel-header h2 {
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+}
+
+.dynamic-contrast-page .dashboard-links {
+    width: 100%;
+}
+
+.dynamic-contrast-page .dashboard-links a,
+.dynamic-contrast-page .dashboard-links .btn {
+    width: 100%;
+    min-height: 56px;
+    justify-content: center;
+}
+
+/* Header interno do card */
+.dynamic-contrast-page .panel-header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.dynamic-contrast-page .panel-header h2 {
+    margin: 0;
+    line-height: 1.15;
+}
+
+/* Corrige o bloco de descrição que ficou espremido no lado */
+.dynamic-contrast-page .card-subtitle-settings {
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px 16px;
+}
+
+.dynamic-contrast-page .card-subtitle-settings .panel-desc,
+.dynamic-contrast-page .panel-desc {
+    width: 100%;
+    max-width: 70ch;
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+/* Lista dos controles */
+.dynamic-contrast-page .settings-summary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+/* Card do contraste */
+.dynamic-contrast-page .setting-item-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    width: 100%;
+    padding: clamp(20px, 4vw, 32px);
+    border-radius: 20px;
+}
+
+.dynamic-contrast-page .setting-item-vertical .setting-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 0;
+}
+
+.dynamic-contrast-page .custom-slider {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Card do modo conforto */
+.dynamic-contrast-page .setting-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 18px;
+    width: 100%;
+    padding: clamp(20px, 4vw, 28px);
+    border-radius: 20px;
+}
+
+.dynamic-contrast-page .setting-item .setting-info {
+    min-width: 0;
+    width: 100%;
+}
+
+.dynamic-contrast-page .setting-item .switch {
+    flex: 0 0 auto;
+}
+
+/* Textos longos, principalmente alemão/russo */
+.dynamic-contrast-page .setting-label,
+.dynamic-contrast-page .setting-value,
+.dynamic-contrast-page .setting-info p,
+.dynamic-contrast-page .preview-box p {
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+}
+
+.dynamic-contrast-page .preview-box {
+    width: 100%;
+    margin-top: 22px;
+    padding: clamp(20px, 4vw, 32px);
+    border-radius: 20px;
+}
+
+.dynamic-contrast-page .preview-box h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+/* Tablet/Desktop: dá mais respiro sem apertar */
+@media (min-width: 769px) {
+    .dynamic-contrast-page .dashboard-header {
+        padding: 32px;
+    }
+
+    .dynamic-contrast-page .dashboard-card {
+        padding: 32px;
+    }
+
+    .dynamic-contrast-page .setting-item {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .dynamic-contrast-page .setting-item .setting-info {
+        max-width: 72%;
+    }
+
+    .dynamic-contrast-page .card-subtitle-settings .panel-desc,
+    .dynamic-contrast-page .panel-desc {
+        max-width: 72ch;
+    }
+}
+
+/* Mobile real */
+@media (max-width: 768px) {
+    .dynamic-contrast-page .page-shell {
+        padding: 14px;
+        gap: 36px;
+    }
+
+    .dynamic-contrast-page .dashboard-header {
+        padding: 24px 18px;
+        border-radius: 24px;
+    }
+
+    .dynamic-contrast-page .dashboard-header h1 {
+        font-size: clamp(1.35rem, 7vw, 1.75rem) !important;
+        line-height: 1.15;
+    }
+
+    .dynamic-contrast-page .dashboard-card {
+        padding: 20px 18px;
+        border-radius: 24px;
+    }
+
+    .dynamic-contrast-page .panel-header h2 {
+        font-size: clamp(1.45rem, 7vw, 1.9rem);
+    }
+
+    .dynamic-contrast-page .card-subtitle-settings {
+        padding: 12px 14px;
+        border-radius: 14px;
+    }
+
+    .dynamic-contrast-page .card-subtitle-settings .panel-desc,
+    .dynamic-contrast-page .panel-desc {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    .dynamic-contrast-page .setting-item-vertical,
+    .dynamic-contrast-page .setting-item,
+    .dynamic-contrast-page .preview-box {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .dynamic-contrast-page .setting-label {
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .dynamic-contrast-page .setting-value {
+        font-size: 1.05rem;
+    }
+
+    .dynamic-contrast-page .custom-slider {
+        margin-top: 4px;
+    }
+}
+
+/* Celular estreito */
+@media (max-width: 390px) {
+    .dynamic-contrast-page .page-shell {
+        padding-inline: 12px;
+    }
+
+    .dynamic-contrast-page .dashboard-header,
+    .dynamic-contrast-page .dashboard-card {
+        padding-inline: 16px;
+    }
+
+    .dynamic-contrast-page .setting-item-vertical,
+    .dynamic-contrast-page .setting-item,
+    .dynamic-contrast-page .preview-box {
+        padding: 18px;
+    }
+}

@@ -172,6 +172,13 @@ window.onload = () => {
             localStorage.setItem('language', lang);
         });
     }
+    if (goToDashboardButton) {
+    goToDashboardButton.addEventListener('click', () => {
+        // Salva que o onboarding terminou ANTES de ir embora
+        localStorage.setItem('onboardingComplete', 'true');
+        window.location.href = '/dashboard';
+    });
+}
 
     // Inicia o processo de tradução e app
     initI18n();

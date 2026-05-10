@@ -7,7 +7,7 @@
     <link rel="icon" href="/static/img/Eyecare(48x48).png" type="image/png">
     <link rel="stylesheet" href="/static/css/dashboard.css">
 </head>
-<body>
+<body class="dynamic-contrast-page">
     <div class="page-shell">
         <header class="dashboard-header" style="align-items: center;">
             <div class="dashboard-brand">
@@ -15,7 +15,7 @@
                 <h1 style="font-size: 2rem;" data-i18n="dynamic_contrast_title"></h1>
             </div>
             <div class="dashboard-links">
-                <a href="/dashboard" class="btn btn-secondary" style="border-radius: 12px;">Voltar ao Dashboard</a>
+                <a href="/dashboard" class="btn btn-secondary" style="border-radius: 12px;" data-i18n="back_to_dashboard">Voltar ao Dashboard</a>
             </div>
         </header>
 
@@ -55,6 +55,7 @@
 </main>
     </div>
     <script src="https://unpkg.com/i18next@21.6.14/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@2.0.1/i18nextHttpBackend.min.js"></script>
     <script src="/static/js/acessibilidade.js"></script>
     <script src="/static/js/dynamic-contrast.js"></script>
     <svg xmlns="http://www.w3.org/2000/svg" class="sr-only" aria-hidden="true" style="position: absolute; width: 0; height: 0;">

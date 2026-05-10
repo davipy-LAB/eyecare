@@ -35,6 +35,19 @@
             "german": "ドイツ語",
             "settings": "設定",
             "chroma_title": "Chroma",
+            "aprendizado": "学習",
+            "auto-cuidado": "セルフケア",
+            "aprendizado_title": "学習",
+            "auto-cuidado_title": "セルフケア",
+            "auto-cuidado_description": "目の休息のためのルーティンや、ご自身の好みに合わせたセルフケアのヒントに従ってください。",
+            "aprendizado_description": "アクセシビリティのオプションとその活用方法をユーザーがより深く理解できるよう支援する教育コンテンツ。",
+            "self-care_title": "セルフケア",
+            "self-care_description": "目の休息のためのルーティンや、ご自身の好みに合わせたセルフケアのヒントに従ってください。",
+            "spanish": "スペイン語",
+            "italian": "イタリア語",
+            "french": "フランス語",
+            "russian": "ロシア語",
+            "japanese": "日本語",
             "chroma_description": "このエリアでは、アクセシビリティを考慮しつつ視覚的認識を向上させるための色とコントラストの調整機能を試すことができます。",
             "dynamic_contrast": "ダイナミックコントラスト",
             "dynamic_contrast_text": "視覚的な滑らかさを損なうことなく、背景とテキストの読みやすさのバランスをとるためのコントラスト調整です。",
@@ -73,5 +86,6 @@
             "comfort_mode": "快適モード",
             "comfort_desc": "柔らかなセピア調の色合いでブルーライトを低減します。",
             "explain_title": "リアルタイムプレビュー",
-            "explain_desc": "このテキストは、これらの変更が読みやすさにどのように影響するかを説明します。長時間の読書中の目の疲れを軽減することを目的としています。"
+            "explain_content": "このテキストは、これらの変更が読みやすさにどのように影響するかを説明します。長時間の読書中の目の疲れを軽減することを目的としています。",
+            "back_to_dashboard": "ダッシュボードに戻る"
 }

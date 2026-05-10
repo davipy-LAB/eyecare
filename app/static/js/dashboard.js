@@ -52,206 +52,6 @@ const dashboardViews = {
     }
 };
 
-// Recursos de tradução para o dashboard
-const dashboardI18nResources = {
-    'pt-BR': {
-        translation: {
-            dashboard_title: 'Dashboard',
-            dashboard_subtitle: 'Painel de controle da sua experiência de acessibilidade.',
-            explore: 'Explorar',
-            chroma: 'Chroma',
-            aprendizado: 'Aprendizado',
-            'auto-cuidado': 'Auto-Cuidado',
-            current_settings: 'Configurações Atuais',
-            settings_summary: 'Resumo dos dados carregados do onboarding para ajudar você a ajustar a experiência.',
-            reset_onboarding: 'Reiniciar Onboarding',
-            language: 'Idioma',
-            colorblind: 'Daltonismo',
-            filter: 'Filtro',
-            none: 'Nenhum',
-            yes: 'Sim',
-            no: 'Não',
-            portuguese: 'Português',
-            english: 'English',
-            german: 'Deutsch',
-            settings: 'Configurações',
-            chroma_title: 'Chroma',
-            chroma_description: 'Use esta área para explorar ajustes de cor e contraste pensados para melhorar a percepção visual de modo acessível.',
-            dynamic_contrast: 'Contraste Dinâmico',
-            dynamic_contrast_text: 'Ajustes de contraste para equilibrar a leitura entre fundo e texto sem perder a suavidade visual.',
-            sensitive_palette: 'Paleta Sensível',
-            sensitive_palette_text: 'Seleções de cores cuidadosas que preservam acessibilidade para diferentes tipos de visão.',
-            learning_title: 'Aprendizado',
-            learning_description: 'Conteúdo educativo para ajudar o usuário a entender melhor as opções de acessibilidade e como usá-las.',
-            vision_tips: 'Dicas de Visão',
-            vision_tips_text: 'Recomendações sobre como aproveitar melhor os recursos do Eyecare em diferentes ambientes.',
-            color_teaching: 'Reaprenda as Cores',
-            color_teaching_text: 'Conteúdo educativo para ajudar o usuário a reaprender as cores e entender melhor as opções de acessibilidade e como usá-las.',
-            usage_flow_text: 'Passo a passo das ferramentas disponíveis para criar uma experiência de leitura mais confortável.',
-            self_care_title: 'Auto-Cuidado',
-            self_care_description: 'Acompanhe rotinas de descanso visual e sugestões de autocuidado adaptadas às suas preferências.',
-            scheduled_breaks: 'Pausas Programadas',
-            scheduled_breaks_text: 'Lembretes para fazer pequenas pausas e relaxar os olhos durante o uso prolongado da tela.',
-            ideal_environment: 'Ambiente Ideal',
-            ideal_environment_text: 'Conselhos para controlar brilho, temperatura de cor e ergonomia do espaço de trabalho.',
-            linkedin: 'LinkedIn',
-            github: 'GitHub',
-            resume: 'Currículo',
-            author: 'Davi Dias de Souza — autoria e design',
-            aprendizado_title: 'Aprendizado',
-            aprendizado_description: 'Conteúdo educativo para ajudar o usuário a reaprender as cores e entender melhor as opções de acessibilidade e como usá-las.',
-            'auto-cuidado_title': 'Auto-Cuidado',
-            'auto-cuidado_description': 'Acompanhe rotinas de descanso visual e sugestões de autocuidado adaptadas às suas preferências para promover uma relação mais saudável com a tecnologia.',
-            reset_confirm_title: 'Confirmação de Reset',
-            reset_confirm_text: 'Tem certeza de que deseja reiniciar a personalização? Isso irá apagar suas preferências atuais e levá-lo de volta ao início.',
-            cancel: 'Cancelar',
-            confirm_reset_action: 'Confirmar',
-            "access_feature": "Acessar Feature",
-            "view_extension": "Ver Extensão",
-            "dynamic_contrast": "Contraste Dinâmico",
-            "dynamic_contrast_text": "Ajustes de contraste para equilibrar a leitura entre fundo e texto...",
-            "sensitive_palette": "Paleta Sensível",
-            "sensitive_palette_text": "Seleções de cores cuidadosas que preservam acessibilidade...",
-            "protanopia": "Protanopia",
-            "deuteranopia": "Deuteranopia",
-            "tritanopia": "Tritanopia"
-        }
-    },
-    en: {
-        translation: {
-            dashboard_title: 'Dashboard',
-            dashboard_subtitle: 'Control panel for your accessibility experience.',
-            explore: 'Explore',
-            chroma: 'Chroma',
-            aprendizado: 'Learning',
-            'auto-cuidado': 'Self-Care',
-            settings: 'Settings',
-            current_settings: 'Current Settings',
-            settings_summary: 'Summary of data loaded from onboarding to help you adjust the experience.',
-            reset_onboarding: 'Reset Onboarding',
-            language: 'Language',
-            colorblind: 'Colorblind',
-            filter: 'Filter',
-            none: 'None',
-            yes: 'Yes',
-            no: 'No',
-            portuguese: 'Portuguese',
-            english: 'English',
-            german: 'German',
-            chroma_title: 'Chroma',
-            chroma_description: 'Use this area to explore color and contrast adjustments designed to improve visual perception in an accessible way.',
-            dynamic_contrast: 'Dynamic Contrast',
-            dynamic_contrast_text: 'Contrast adjustments to balance reading between background and text without losing visual smoothness.',
-            sensitive_palette: 'Sensitive Palette',
-            sensitive_palette_text: 'Careful color selections that preserve accessibility for different types of vision.',
-            learning_title: 'Learning',
-            learning_description: 'Educational content to help users better understand accessibility options and how to use them.',
-            vision_tips: 'Vision Tips',
-            vision_tips_text: 'Recommendations on how to better take advantage of Eyecare resources in different environments.',
-            usage_flow: 'Usage Flow',
-            usage_flow_text: 'Step-by-step guide of available tools to create a more comfortable reading experience.',
-            self_care_title: 'Self-Care',
-            self_care_description: 'Track visual rest routines and self-care suggestions adapted to your preferences.',
-            scheduled_breaks: 'Scheduled Breaks',
-            scheduled_breaks_text: 'Reminders to take short breaks and relax your eyes during prolonged screen use.',
-            ideal_environment: 'Ideal Environment',
-            ideal_environment_text: 'Advice for controlling brightness, color temperature and workspace ergonomics.',
-            linkedin: 'LinkedIn',
-            github: 'GitHub',
-            resume: 'Resume',
-            author: 'Davi Dias de Souza — authorship and design',
-            learning_title: 'Learning',
-            learning_description: 'Educational content to help users relearn colors and better understand accessibility options and how to use them.',
-            'auto-cuidado_title': 'Self-Care',
-            'auto-cuidado_description': 'Track visual rest routines and self-care suggestions adapted to your preferences to promote a healthier relationship with technology.',
-            color_teaching: 'Relearn Colors',
-            color_teaching_text: 'Educational content to help users relearn colors and better understand accessibility options and how to use them.',
-            aprendizado_title: 'Learning',
-            aprendizado_description: 'Educational content to help users relearn colors and better understand accessibility options and how to use them.',
-            color_teaching: 'Relearn Colors',
-            reset_confirm_title: 'Reset Confirmation',
-            reset_confirm_text: 'Are you sure you want to reset the onboarding? This will delete your current preferences and take you back to the beginning.',
-            cancel: 'Cancel',
-            confirm_reset_action: 'Confirm',
-            "access_feature": "Access Feature",
-            "view_extension": "View Extension",
-            "dynamic_contrast": "Dynamic Contrast",
-            "dynamic_contrast_text": "Contrast adjustments to balance reading between background and text...",
-            "sensitive_palette": "Sensitive Palette",
-            "sensitive_palette_text": "Careful color selections that preserve accessibility...",
-            "protanopia": "Protanopia",
-            "deuteranopia": "Deuteranopia",
-            "tritanopia": "Tritanopia"
-        }
-    },
-    de: {
-        translation: {
-            dashboard_title: 'Dashboard',
-            dashboard_subtitle: 'Bedienfeld für Ihre Barrierefreiheitserfahrung.',
-            explore: 'Erkunden',
-            chroma: 'Chroma',
-            aprendizado: 'Lernen',
-            'auto-cuidado': 'Selbstfürsorge',
-            settings: 'Einstellungen',
-            current_settings: 'Aktuelle Einstellungen',
-            settings_summary: 'Zusammenfassung der Daten aus dem Onboarding, um Ihnen bei der Anpassung der Erfahrung zu helfen.',
-            reset_onboarding: 'Onboarding zurücksetzen',
-            language: 'Sprache',
-            colorblind: 'Farbblind',
-            filter: 'Filter',
-            none: 'Kein',
-            yes: 'Ja',
-            no: 'Nein',
-            portuguese: 'Portugiesisch',
-            english: 'Englisch',
-            german: 'Deutsch',
-            chroma_title: 'Chroma',
-            chroma_description: 'Verwenden Sie diesen Bereich, um Farb- und Kontrastanpassungen zu erkunden, die entwickelt wurden, um die visuelle Wahrnehmung auf zugängliche Weise zu verbessern.',
-            dynamic_contrast: 'Dynamischer Kontrast',
-            dynamic_contrast_text: 'Kontrastanpassungen, um das Lesen zwischen Hintergrund und Text auszugleichen, ohne die visuelle Glattheit zu verlieren.',
-            sensitive_palette: 'Empfindliche Palette',
-            sensitive_palette_text: 'Sorgfältige Farbauswahlen, die die Zugänglichkeit für verschiedene Arten von Sehvermögen erhalten.',
-            learning_title: 'Lernen',
-            learning_description: 'Bildungsinhalte, um Benutzern zu helfen, Barrierefreiheitsoptionen besser zu verstehen und wie man sie verwendet.',
-            vision_tips: 'Sehtipps',
-            vision_tips_text: 'Empfehlungen, wie Sie die Ressourcen von Eyecare in verschiedenen Umgebungen besser nutzen können.',
-            usage_flow: 'Nutzungsablauf',
-            usage_flow_text: 'Schritt-für-Schritt-Anleitung der verfügbaren Tools, um eine komfortablere Leseerfahrung zu schaffen.',
-            self_care_title: 'Selbstfürsorge',
-            self_care_description: 'Verfolgen Sie visuelle Ruhe-Routinen und Selbstfürsorge-Vorschläge, die an Ihre Vorlieben angepasst sind.',
-            scheduled_breaks: 'Geplante Pausen',
-            scheduled_breaks_text: 'Erinnerungen, um kurze Pausen zu machen und Ihre Augen während der verlängerten Bildschirmnutzung zu entspannen.',
-            ideal_environment: 'Ideale Umgebung',
-            ideal_environment_text: 'Ratschläge zur Steuerung von Helligkeit, Farbtemperatur und Ergonomie des Arbeitsbereichs.',
-            linkedin: 'LinkedIn',
-            github: 'GitHub',
-            resume: 'Lebenslauf',
-            author: 'Davi Dias de Souza — Urheberschaft und Design',
-            learning_title: 'Lernen',
-            learning_description: 'Bildungsinhalte, um Benutzern zu helfen, Farben neu zu lernen und Barrierefreiheitsoptionen besser zu verstehen und wie man sie verwendet.',
-            'auto-cuidado_title': 'Selbstfürsorge',
-            'auto-cuidado_description': 'Verfolgen Sie visuelle Ruhe-Routinen und Selbstfürsorge-Vorschläge, die an Ihre Vorlieben angepasst sind, um eine gesündere Beziehung zur Technologie zu fördern.',
-            aprendizado_title: 'Lernen',
-            aprendizado_description: 'Bildungsinhalte, um Benutzern zu helfen, Farben neu zu lernen und Barrierefreiheitsoptionen besser zu verstehen und wie man sie verwendet.',
-            color_teaching: 'Farben neu lernen',
-            color_teaching_text: 'Bildungsinhalte, um Benutzern zu helfen, Farben neu zu lernen und Barrierefreiheitsoptionen besser zu verstehen und wie man sie verwendet.',
-            reset_confirm_title: 'Bestätigung zurücksetzen',
-            reset_confirm_text: 'Sind Sie sicher, dass Sie das Onboarding zurücksetzen möchten? Dadurch werden Ihre aktuellen Präferenzen gelöscht und Sie kehren zum Anfang zurück.',
-            cancel: 'Abbrechen',
-            confirm_reset_action: 'Bestätigen',
-            "access_feature": "Feature zugreifen",
-            "view_extension": "Erweiterung anzeigen",
-            "dynamic_contrast": "Dynamischer Kontrast",
-            'dynamic_contrast_text': 'Kontrastanpassungen, um das Lesen zwischen Hintergrund und Text auszugleichen...',
-            "sensitive_palette_text": "Sorgfaltige Farbauswahlen, die die Zugänglichkeit...",
-            "sensitive_palette": "Empfindliche Palette",
-            "protanopia": "Protanopie",
-            "deuteranopia": "Deuteranopie",
-            "tritanopia": "Tritanopie",
-        }
-    }
-};
-
 function updateDashboardContent() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
@@ -261,6 +61,40 @@ function updateDashboardContent() {
 function syncSettings() {
     applyAccessibilitySettings();
 }
+
+async function initI18n() {
+    const storedLang = localStorage.getItem('language') || 'en';
+
+    try {
+        await i18next
+            .use(i18nextHttpBackend)
+            .init({
+                lng: storedLang,
+                fallbackLng: 'en',
+                load: 'languageOnly',
+                backend: {
+                    loadPath: '/static/locales/{{lng}}/translation.json'
+                }
+            });
+
+        console.log("i18next carregado com sucesso!");
+
+    } catch (err) {
+        console.error("Erro crítico ao carregar traduções:", err);
+    }
+}
+
+const languageLabels = {
+    pt: 'portuguese',
+    en: 'english',
+    de: 'german',
+    es: 'spanish',
+    it: 'italian',
+    fr: 'french',
+    ru: 'russian',
+    jpn: 'japanese'
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     const currentLang = document.getElementById('current-lang');
     const currentType = document.getElementById('current-type');
@@ -278,10 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 1. FUNÇÃO DE APLICAÇÃO GLOBAL
     // Inicializar i18next
-    i18next.init({
-        lng: lang,
-        resources: dashboardI18nResources
-    }, function() {
+    initI18n().then(() => {
         updateDashboardContent();
         renderView(chosenView);
         syncSettings();
@@ -291,9 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const storedLang = localStorage.getItem('language') || 'en';
 
         if (currentLang) {
-            if (storedLang === 'pt-BR') currentLang.textContent = i18next.t('portuguese');
-            else if (storedLang === 'en') currentLang.textContent = i18next.t('english');
-            else if (storedLang === 'de') currentLang.textContent = i18next.t('german');
+            const langKey = languageLabels[storedLang] || 'english';
+            currentLang.textContent = i18next.t(langKey);
         }
 
         if (currentType) {
@@ -418,8 +248,8 @@ btnConfirmReset.addEventListener('click', () => {
                 const currentView = localStorage.getItem('dashboardView') || 'chroma';
                 renderView(currentView);
 
-                // Atualizar as labels das configurações atuais
-                currentLang.textContent = selectedLang === 'pt-BR' ? i18next.t('portuguese') : selectedLang === 'de' ? i18next.t('german') : i18next.t('english');
+                const langKey = languageLabels[selectedLang] || 'english';
+                currentLang.textContent = i18next.t(langKey);
 
                 // Traduzir os valores dependentes de estado (colorblind / filter)
                 // `colorblind` e `type` vêm do escopo superior
@@ -468,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function updateMobileSettings() {
-    const lang = localStorage.getItem('language') || 'pt-BR';
+    const lang = localStorage.getItem('language') || 'pt';
     const type = localStorage.getItem('colorblindType');
     
     const m_lang = document.getElementById('mobile-current-lang');
@@ -476,13 +306,11 @@ function updateMobileSettings() {
     const m_filter = document.getElementById('mobile-current-filter');
     const filter = localStorage.getItem('currentFilter');
 
-    // Traduz o Idioma pegando do seu dicionário
     if (m_lang) {
-        if (lang === 'pt-BR') m_lang.textContent = i18next.t('portuguese');
-        else if (lang === 'en') m_lang.textContent = i18next.t('english');
-        else if (lang === 'de') m_lang.textContent = i18next.t('german');
+        const langKey = languageLabels[lang] || 'english';
+        m_lang.textContent = i18next.t(langKey);
     }
-    
+
     // Traduz o tipo de daltonismo ou retorna "No" (Não)
     if (m_type) {
         m_type.textContent = type ? i18next.t(type) : i18next.t('no');

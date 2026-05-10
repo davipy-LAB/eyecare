@@ -35,6 +35,17 @@
             "german": "Alemán",
             "settings": "Configuración",
             "chroma_title": "Chroma",
+            "aprendizado": "Aprendizaje",
+            "auto-cuidado": "Autocuidado",
+            "aprendizado_title": "Aprendizaje",
+            "aprendizado_description": "Contenido educativo para ayudar a los usuarios a comprender mejor las opciones de accesibilidad y cómo utilizarlas.",
+            "auto-cuidado_title": "Autocuidado",
+            "auto-cuidado_description": "Sigue rutinas de descanso ocular y sugerencias de autocuidado adaptadas a tus preferencias.",
+            "spanish": "Español",
+            "italian": "Italiano",
+            "french": "Francés",
+            "russian": "Ruso",
+            "japanese": "Japonés",
             "chroma_description": "Utiliza esta área para explorar los ajustes de color y contraste diseñados para mejorar la percepción visual de forma accesible.",
             "dynamic_contrast": "Contraste dinámico",
             "dynamic_contrast_text": "Ajustes de contraste para equilibrar la lectura entre el fondo y el texto sin perder fluidez visual.",
@@ -73,5 +84,6 @@
             "comfort_mode": "Modo confort",
             "comfort_desc": "Reduce la luz azul con suaves tonos sepia.",
             "explain_title": "Vista previa en tiempo real",
-            "explain_desc": "Este texto ayuda a explicar cómo estos cambios afectan a la legibilidad. El objetivo es reducir la fatiga visual durante sesiones de lectura prolongadas."
-}
+            "explain_content": "Este texto ayuda a explicar cómo estos cambios afectan a la legibilidad. El objetivo es reducir la fatiga visual durante sesiones de lectura prolongadas.",
+            "back_to_dashboard": "Volver al panel de control"
+        }

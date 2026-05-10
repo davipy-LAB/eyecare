@@ -35,6 +35,17 @@
             "german": "German",
             "settings": "Settings",
             "chroma_title": "Chroma",
+            "aprendizado": "Learning",
+            "auto-cuidado": "Self-Care",
+            "aprendizado_title": "Learning",
+            "aprendizado_description": "Educational content to help users better understand accessibility options and how to use them.",
+            "auto-cuidado_title": "Self-Care",
+            "auto-cuidado_description": "Follow eye rest routines and self-care suggestions tailored to your preferences.",
+            "spanish": "Spanish",
+            "italian": "Italian",
+            "french": "French",
+            "russian": "Russian",
+            "japanese": "Japanese",
             "chroma_description": "Use this area to explore color and contrast adjustments designed to improve visual perception in an accessible way.",
             "dynamic_contrast": "Dynamic Contrast",
             "dynamic_contrast_text": "Contrast adjustments to balance reading between background and text without losing visual smoothness.",
@@ -73,5 +84,6 @@
             "comfort_mode": "Comfort Mode",
             "comfort_desc": "Reduces blue light with soft sepia tones.",
             "explain_title": "Real-time Preview",
-            "explain_desc": "This text helps explain how these changes affect readability. The goal is to reduce eye strain during long reading sessions."
+            "explain_content": "This text helps explain how these changes affect readability. The goal is to reduce eye strain during long reading sessions.",
+            "back_to_dashboard": "Back to Dashboard"
 }
