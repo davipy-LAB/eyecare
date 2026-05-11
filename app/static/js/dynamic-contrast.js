@@ -36,20 +36,23 @@ document.addEventListener('DOMContentLoaded', () => {
         initI18n();
     }
 
-    const updateContrast = (val) => {
-        localStorage.setItem('eye-contrast', val);
+    const updateContrast = async (val) => {
+    localStorage.setItem('eye-contrast', val);
+    localStorage.setItem('dynamic-contrast-enabled', 'true');
 
-        if (contrastDisplay) {
-            contrastDisplay.textContent = val;
-        }
+    if (contrastDisplay) {
+        contrastDisplay.textContent = val;
+    }
 
-        applyAccessibilitySettings();
-    };
+    applyAccessibilitySettings();
+    await syncLocalPreferencesToCloud();
+};
 
-    const toggleComfort = (isActive) => {
-        localStorage.setItem('comfort-mode', isActive);
-        applyAccessibilitySettings();
-    };
+const toggleComfort = async (isActive) => {
+    localStorage.setItem('comfort-mode', isActive);
+    applyAccessibilitySettings();
+    await syncLocalPreferencesToCloud();
+};
 
     if (slider) slider.addEventListener('input', (e) => updateContrast(e.target.value));
     if (comfortMode) comfortMode.addEventListener('change', (e) => toggleComfort(e.target.checked));

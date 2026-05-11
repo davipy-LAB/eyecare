@@ -49,3 +49,19 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
   // ... other actions if (startTimer, etc)
 });
+
+chrome.runtime.onStartup.addListener(() => {
+  chrome.storage.local.get(["pauseReminders"], (result) => {
+    if (result.pauseReminders) {
+      chrome.alarms.create("eyeCarePause", { periodInMinutes: 20 });
+    }
+  });
+});
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.storage.local.get(["pauseReminders"], (result) => {
+    if (result.pauseReminders) {
+      chrome.alarms.create("eyeCarePause", { periodInMinutes: 20 });
+    }
+  });
+});

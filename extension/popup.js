@@ -73,10 +73,24 @@ buttons.forEach(btn => {
     btn.classList.add('active');
 
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      if (tabs[0]) {
-        chrome.tabs.sendMessage(tabs[0].id, { action: "applyFilter", type: filterId });
+  if (!tabs || !tabs[0] || !tabs[0].id) {
+    console.warn("EyeCare: nenhuma aba ativa encontrada.");
+    return;
+  }
+
+  chrome.tabs.sendMessage(
+    tabs[0].id,
+    { action: "applyFilter", type: filterId },
+    () => {
+      if (chrome.runtime.lastError) {
+        console.warn(
+          "Sorry, this page does not support EyeCare filters. Error: " +
+          chrome.runtime.lastError.message
+        );
       }
-    });
+    }
+  );
+});
   });
 });
 

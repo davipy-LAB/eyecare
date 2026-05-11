@@ -84,40 +84,45 @@ function showStep(step) {
   updateStepInterface();
 }
 
-function nextStep() {
+async function nextStep() {
   if (currentStep === 1) {
     showStep(2);
     return;
   }
 
   if (currentStep === 2) {
-    const selected = document.querySelector('input[name="colorblind"]:checked');
-    if (!selected) {
-      alert(i18next.t('colorblind_question') + ' ' + i18next.t('yes') + '/' + i18next.t('no'));
-      return;
-    }
-    localStorage.setItem('colorblind', selected.value);
-    if (selected.value === 'yes') {
-      showStep(3);
-      return;
-    }
-    finishOnboarding();
+  const selected = document.querySelector('input[name="colorblind"]:checked');
+  if (!selected) {
+    alert(i18next.t('colorblind_question') + ' ' + i18next.t('yes') + '/' + i18next.t('no'));
     return;
   }
 
-  if (currentStep === 3) {
-    const selected = document.querySelector('input[name="type"]:checked');
-    if (!selected) {
-      alert(i18next.t('colorblind_type'));
-      return;
-    }
-    // Salva o tipo e também marca como o filtro atual para o Dashboard
-    localStorage.setItem('colorblindType', selected.value);
-    localStorage.setItem('currentFilter', selected.value); 
-    
-    applyFilter(selected.value);
-    finishOnboarding();
+  localStorage.setItem('colorblind', selected.value);
+  await syncLocalPreferencesToCloud();
+
+  if (selected.value === 'yes') {
+    showStep(3);
+    return;
   }
+
+  finishOnboarding();
+  return;
+}
+
+  if (currentStep === 3) {
+  const selected = document.querySelector('input[name="type"]:checked');
+  if (!selected) {
+    alert(i18next.t('colorblind_type'));
+    return;
+  }
+
+  localStorage.setItem('colorblindType', selected.value);
+  localStorage.setItem('currentFilter', selected.value);
+
+  applyFilter(selected.value);
+
+  await syncLocalPreferencesToCloud();
+  finishOnboarding();
 }
 function previousStep() {
   if (currentStep > 1) {
@@ -125,10 +130,13 @@ function previousStep() {
   }
 }
 
-function finishOnboarding() {
+async function finishOnboarding() {
   localStorage.setItem(onboardingCompleteKey, 'true');
+  await syncLocalPreferencesToCloud();
+
   if (onboardingCard) onboardingCard.style.display = 'none';
   if (formElement) formElement.style.display = 'none';
+
   if (completionPanel) {
     completionPanel.style.display = 'grid';
     completionPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -163,14 +171,18 @@ window.onload = () => {
         // Define o valor do select para o que está no localStorage
         languageSelect.value = localStorage.getItem('language') || 'en';
         
-        languageSelect.addEventListener('change', function() {
-            const lang = this.value;
-            i18next.changeLanguage(lang, () => {
-                updateContent();
-                updateStepInterface();
-            });
-            localStorage.setItem('language', lang);
-        });
+        languageSelect.addEventListener('change', async function() {
+    const lang = this.value;
+
+    localStorage.setItem('language', lang);
+
+    i18next.changeLanguage(lang, () => {
+        updateContent();
+        updateStepInterface();
+    });
+
+    await syncLocalPreferencesToCloud();
+});
     }
     if (goToDashboardButton) {
     goToDashboardButton.addEventListener('click', () => {
@@ -182,4 +194,4 @@ window.onload = () => {
 
     // Inicia o processo de tradução e app
     initI18n();
-};
+}};

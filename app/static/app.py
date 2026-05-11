@@ -4,6 +4,12 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from pathlib import Path
 from fastapi.responses import JSONResponse
+from fastapi import Depends
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import text
+from app.core.database import get_db
+from app.routes.auth import router as auth_router
+from app.routes.preferences import router as preferences_router
 
 app = FastAPI()
 
@@ -24,6 +30,18 @@ async def read_root(request: Request):
     if tpl.exists():
         return HTMLResponse(tpl.read_text(encoding="utf-8"))
     return HTMLResponse(f"<h1>OnBoarding not found at {tpl}</h1>", status_code=404)
+
+
+app.include_router(auth_router)
+
+app.include_router(preferences_router)
+
+# Endpoint de saúde para verificar se a aplicação está rodando
+
+@app.get("/api/health/db")
+async def db_health(db: AsyncSession = Depends(get_db)):
+    result = await db.execute(text("SELECT 1"))
+    return {"database": "ok", "result": result.scalar()}
 
 @app.get("/dashboard", response_class=HTMLResponse)
 async def dashboard(request: Request):

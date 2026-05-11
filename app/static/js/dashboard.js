@@ -238,34 +238,33 @@ btnConfirmReset.addEventListener('click', () => {
     if (languageSelect) {
         languageSelect.value = lang;
         languageSelect.addEventListener('change', function() {
-            const selectedLang = this.value;
-            localStorage.setItem('language', selectedLang);
-            i18next.changeLanguage(selectedLang, () => {
-                // Atualizar todos os elementos com data-i18n
-                updateDashboardContent();
+    const selectedLang = this.value;
+    localStorage.setItem('language', selectedLang);
 
-                // Re-renderizar a view atual com as novas traduções
-                const currentView = localStorage.getItem('dashboardView') || 'chroma';
-                renderView(currentView);
+    i18next.changeLanguage(selectedLang, () => {
+        updateDashboardContent();
 
-                const langKey = languageLabels[selectedLang] || 'english';
-                currentLang.textContent = i18next.t(langKey);
+        const currentView = localStorage.getItem('dashboardView') || 'chroma';
+        renderView(currentView);
 
-                // Traduzir os valores dependentes de estado (colorblind / filter)
-                // `colorblind` e `type` vêm do escopo superior
-                if (currentType) {
-                    if (colorblind === 'yes') {
-                        currentType.textContent = type ? i18next.t(type) : i18next.t('yes');
-                    } else {
-                        currentType.textContent = i18next.t('no');
-                    }
-                }
+        const langKey = languageLabels[selectedLang] || 'english';
+        currentLang.textContent = i18next.t(langKey);
 
-                if (currentFilter) {
-                    currentFilter.textContent = type ? i18next.t(type) : i18next.t('none');
-                }
-            });
-        });
+        if (currentType) {
+            if (colorblind === 'yes') {
+                currentType.textContent = type ? i18next.t(type) : i18next.t('yes');
+            } else {
+                currentType.textContent = i18next.t('no');
+            }
+        }
+
+        if (currentFilter) {
+            currentFilter.textContent = type ? i18next.t(type) : i18next.t('none');
+        }
+    });
+
+    syncLocalPreferencesToCloud();
+});
     }
 });
 
