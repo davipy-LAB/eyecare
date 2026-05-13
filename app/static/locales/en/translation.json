@@ -85,5 +85,21 @@
             "comfort_desc": "Reduces blue light with soft sepia tones.",
             "explain_title": "Real-time Preview",
             "explain_content": "This text helps explain how these changes affect readability. The goal is to reduce eye strain during long reading sessions.",
-            "back_to_dashboard": "Back to Dashboard"
-}
+            "back_to_dashboard": "Back to Dashboard",
+            "account_optional": "Optional",
+            "account_title": "Save your preferences",
+            "account_text": "Create an account to sync EyeCare across the website and extension.",
+            "login": "Login",
+            "register": "Register",
+            "continue_without_account": "Continue without account",
+            "email": "Email",
+            "password": "Password",
+            "username": "Username",
+            "logging_in": "Logging in...",
+            "creating_account": "Creating account...",
+            "login_success": "Logged in successfully.",
+            "register_success": "Account created successfully.",
+            "logout": "Logout",
+            "hello_user": "Hello",
+            "welcome_user": "Welcome to EyeCare!"
+        }

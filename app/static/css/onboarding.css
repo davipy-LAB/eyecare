@@ -452,3 +452,269 @@ fieldset {
     margin: -6px -8px;
     z-index: 100000;
 }
+
+/* ================================
+   EyeCare Auth Card
+================================ */
+
+.auth-card {
+    padding: 32px 36px;
+    margin-bottom: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    box-shadow: var(--shadow);
+}
+
+.auth-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.auth-header > div {
+    flex: 1;
+    min-width: 240px;
+}
+
+.auth-header .step-title {
+    margin: 0 0 10px;
+}
+
+.auth-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.auth-tab {
+    min-height: 46px;
+    padding: 0 18px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-muted);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.auth-tab:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.09);
+    color: var(--text-strong);
+}
+
+.auth-tab.active {
+    background: rgba(56, 189, 248, 0.18);
+    color: var(--primary);
+    border-color: rgba(56, 189, 248, 0.45);
+}
+
+.auth-form {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.auth-form.hidden {
+    display: none;
+}
+
+.auth-input {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 16px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.92);
+    color: var(--text-strong);
+    font-size: 1rem;
+    font-family: inherit;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.auth-input::placeholder {
+    color: rgba(168, 186, 200, 0.65);
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: rgba(56, 189, 248, 0.8);
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12);
+    background: rgba(15, 23, 42, 1);
+}
+
+#continue-guest {
+    width: 100%;
+    margin-top: 4px;
+}
+
+.auth-message {
+    min-height: 22px;
+    margin: 14px 0 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.auth-message.error {
+    color: #fca5a5;
+}
+
+.auth-message.success {
+    color: #86efac;
+}
+
+/* Estado visual quando o usuário já está logado */
+.auth-card.logged-in {
+    border-color: rgba(134, 239, 172, 0.35);
+    background:
+        radial-gradient(circle at top left, rgba(134, 239, 172, 0.08), transparent 35%),
+        var(--surface);
+}
+
+/* ================================
+   Auth Responsivo
+================================ */
+
+@media (max-width: 780px) {
+    .auth-card {
+        padding: 28px;
+    }
+
+    .auth-header {
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 560px) {
+    .auth-card {
+        padding: 24px;
+        border-radius: 28px;
+    }
+
+    .auth-tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-input {
+        min-height: 50px;
+    }
+
+    .auth-tab {
+        min-height: 48px;
+    }
+}
+
+.auth-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.10), transparent 35%);
+    pointer-events: none;
+}
+
+.auth-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+   HERO LANGUAGE SELECT — MOBILE FIX
+   ========================================= */
+
+.hero {
+    overflow: hidden;
+}
+
+.hero-actions {
+    min-width: 0;
+}
+
+.hero-actions .label {
+    flex-shrink: 0;
+}
+
+.hero-actions .select {
+    width: auto;
+    min-width: 160px;
+    max-width: 220px;
+    flex: 0 1 220px;
+}
+
+/* Tablet/mobile: empilha label + select */
+@media (max-width: 680px) {
+    .hero {
+        align-items: stretch;
+    }
+
+    .hero-copy {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .hero-actions {
+        width: 100%;
+        min-width: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .hero-actions .label {
+        width: 100%;
+        white-space: normal;
+    }
+
+    .hero-actions .select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        flex: none;
+    }
+}
+
+/* Celulares bem estreitos */
+@media (max-width: 390px) {
+    .hero {
+        padding: 22px;
+        border-radius: 26px;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.75rem, 9vw, 2.35rem);
+        line-height: 1.08;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .select {
+        min-height: 52px;
+        font-size: 0.95rem;
+    }
+}

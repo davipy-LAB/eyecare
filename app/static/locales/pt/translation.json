@@ -78,6 +78,22 @@
             "comfort_desc": "Reduz a luz azul com tons de sépia suaves.",
             "explain_title": "Visualização em Tempo Real",
             "explain_content": "Este texto ajuda a perceber como as mudanças afetam a legibilidade. O objetivo é reduzir o esforço visual durante longos períodos de leitura.",
-            "back_to_dashboard": "Voltar para o Dashboard"
+            "back_to_dashboard": "Voltar ao painel de controle",
+            "account_optional": "Opcional",
+            "account_title": "Salve suas preferências",
+            "account_text": "Crie uma conta para sincronizar o EyeCare no site e na extensão.",
+            "login": "Entrar",
+            "register": "Registrar-se",
+            "continue_without_account": "Continuar sem conta",
+            "email": "E-mail",
+            "password": "Senha",
+            "username": "Nome de usuário",
+            "logging_in": "Iniciando sessão... ",
+            "creating_account": "Criando conta...",
+            "login_success": "Login realizado com sucesso.",
+            "register_success": "Conta criada com sucesso.",
+            "logout": "Sair",
+            "hello_user": "Olá",
+            "welcome_user": "Seja bem-vindo(a) ao EyeCare!"
         }
     

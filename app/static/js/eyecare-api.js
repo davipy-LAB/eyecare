@@ -90,3 +90,51 @@ function applyCloudPreferencesLocally(prefs) {
     localStorage.setItem("comfort-mode", String(Boolean(prefs.comfort_mode)));
     localStorage.setItem("onboardingComplete", String(Boolean(prefs.onboarding_complete)));
 }
+
+async function registerUser(username, email, password) {
+    const response = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ username, email, password })
+    });
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.detail || "Register failed");
+    }
+
+    const data = await response.json();
+
+    localStorage.setItem("access_token", data.access_token);
+    localStorage.setItem("username", data.user.username);
+    localStorage.setItem("user_email", data.user.email);
+    localStorage.setItem("user_plan", data.user.plan);
+
+    return data;
+}
+
+async function loginUser(email, password) {
+    const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+    });
+
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.detail || "Login failed");
+    }
+
+    const data = await response.json();
+
+    localStorage.setItem("access_token", data.access_token);
+    localStorage.setItem("username", data.user.username);
+    localStorage.setItem("user_email", data.user.email);
+    localStorage.setItem("user_plan", data.user.plan);
+
+    return data;
+}

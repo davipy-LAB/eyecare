@@ -91,6 +91,15 @@ async def update_preferences(
 
     updates["user_id"] = user_id
 
+    await db.execute(
+    text("""
+        INSERT INTO public.user_preferences (user_id)
+        VALUES (:user_id)
+        ON CONFLICT (user_id) DO NOTHING
+    """),
+    {"user_id": user_id}
+)
+
     result = await db.execute(
         text(f"""
             UPDATE public.user_preferences
@@ -114,4 +123,10 @@ async def update_preferences(
     prefs = result.mappings().first()
     await db.commit()
 
+    if not prefs:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Preferences not found"
+        )
+    
     return dict(prefs)

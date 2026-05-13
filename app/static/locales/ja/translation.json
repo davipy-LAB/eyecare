@@ -87,5 +87,21 @@
             "comfort_desc": "柔らかなセピア調の色合いでブルーライトを低減します。",
             "explain_title": "リアルタイムプレビュー",
             "explain_content": "このテキストは、これらの変更が読みやすさにどのように影響するかを説明します。長時間の読書中の目の疲れを軽減することを目的としています。",
-            "back_to_dashboard": "ダッシュボードに戻る"
-}
+            "back_to_dashboard": "ダッシュボードに戻る",
+            "account_optional": "任意",
+            "account_title": "設定を保存する",
+            "account_text": "アカウントを作成すると、ウェブサイトと拡張機能間でEyeCareのデータを同期できます。",
+            "login": "ログイン",
+            "register": "登録",
+            "continue_without_account": "アカウントなしで続ける",
+            "email": "メールアドレス",
+            "password": "パスワード",
+            "username": "ユーザー名",
+            "logging_in": "ログイン中... ",
+            "creating_account": "アカウントを作成中... ",
+            "login_success": "ログインに成功しました。",
+            "register_success": "アカウントの作成に成功しました。",
+            "logout": "ログアウト",
+            "hello_user": "Hello",
+            "welcome_user": "EyeCareへようこそ！"
+        }

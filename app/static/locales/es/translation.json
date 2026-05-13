@@ -85,5 +85,21 @@
             "comfort_desc": "Reduce la luz azul con suaves tonos sepia.",
             "explain_title": "Vista previa en tiempo real",
             "explain_content": "Este texto ayuda a explicar cómo estos cambios afectan a la legibilidad. El objetivo es reducir la fatiga visual durante sesiones de lectura prolongadas.",
-            "back_to_dashboard": "Volver al panel de control"
+            "back_to_dashboard": "Volver al panel de control",
+            "account_optional": "Opcional",
+            "account_title": "Guarda tus preferencias",
+            "account_text": "Crea una cuenta para sincronizar EyeCare en el sitio web y la extensión.",
+            "login": "Iniciar sesión",
+            "register": "Registrarse",
+            "continue_without_account": "Continuar sin cuenta",
+            "email": "Correo electrónico",
+            "password": "Contraseña",
+            "username": "Nombre de usuario",
+            "logging_in": "Iniciando sesión... ",
+            "creating_account": "Creando cuenta...",
+            "login_success": "Inicio de sesión realizado con éxito.",
+            "register_success": "Cuenta creada con éxito.",
+            "logout": "Cerrar sesión",
+            "hello_user": "Hola",
+            "welcome_user": "¡Bienvenido a EyeCare!"
         }

@@ -73,7 +73,7 @@ async function initI18n() {
                 fallbackLng: 'en',
                 load: 'languageOnly',
                 backend: {
-                    loadPath: '/static/locales/{{lng}}/translation.json'
+                    loadPath: '/static/locales/{{lng}}/translation.json?v=greeting-1'
                 }
             });
 
@@ -92,7 +92,7 @@ const languageLabels = {
     it: 'italian',
     fr: 'french',
     ru: 'russian',
-    jpn: 'japanese'
+    ja: 'japanese'
 };
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -104,39 +104,75 @@ document.addEventListener('DOMContentLoaded', function() {
     const contentTitle = document.getElementById('content-title');
     const contentDescription = document.getElementById('content-description');
     const contentDetails = document.getElementById('content-details');
+    const logoutButton = document.getElementById('logout-button');
+    const userGreeting = document.getElementById('user-greeting');
 
     const lang = localStorage.getItem('language') || 'en';
     const colorblind = localStorage.getItem('colorblind');
     const type = localStorage.getItem('colorblindType');
     const chosenView = localStorage.getItem('dashboardView') || 'chroma';
 
+    function updateUserGreeting() {
+    const username = localStorage.getItem('username');
+
+    if (!userGreeting) return;
+
+    if (username) {
+        userGreeting.textContent = `${i18next.t('hello_user')}, ${username}. ${i18next.t('welcome_user')}`;
+    } else {
+        userGreeting.textContent = "";
+    }
+}
+
+    if (logoutButton) {
+    logoutButton.addEventListener('click', () => {
+        // Dados da sessão
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('username');
+        localStorage.removeItem('user_email');
+        localStorage.removeItem('user_plan');
+
+        // Impede o onboarding de redirecionar direto para /dashboard
+        localStorage.removeItem('onboardingComplete');
+
+        // Mantém preferências locais:
+        // language, colorblind, colorblindType, currentFilter etc.
+        // Assim logout não vira "reset total".
+
+        window.location.replace('/');
+    });
+}
+
     // 1. FUNÇÃO DE APLICAÇÃO GLOBAL
     // Inicializar i18next
     initI18n().then(() => {
-        updateDashboardContent();
-        renderView(chosenView);
-        syncSettings();
+    updateDashboardContent();
+    updateUserGreeting();
 
-       const storedType = localStorage.getItem('colorblindType') || 'no'; 
-        const storedFilter = localStorage.getItem('currentFilter') || 'none';
-        const storedLang = localStorage.getItem('language') || 'en';
+    const currentView = localStorage.getItem('dashboardView') || 'chroma';
+    renderView(currentView);
 
-        if (currentLang) {
-            const langKey = languageLabels[storedLang] || 'english';
-            currentLang.textContent = i18next.t(langKey);
-        }
+    syncSettings();
 
-        if (currentType) {
-            currentType.textContent = i18next.t(storedType.toLowerCase());
-        }
-        
-        if (currentFilter) {
-            currentFilter.textContent = i18next.t(storedFilter.toLowerCase());
-        }
-        
-        updateMobileSettings();
-    });
+    const storedType = localStorage.getItem('colorblindType') || 'no';
+    const storedFilter = localStorage.getItem('currentFilter') || 'none';
+    const storedLang = localStorage.getItem('language') || 'en';
 
+    if (currentLang) {
+        const langKey = languageLabels[storedLang] || 'english';
+        currentLang.textContent = i18next.t(langKey);
+    }
+
+    if (currentType) {
+        currentType.textContent = i18next.t(storedType.toLowerCase());
+    }
+
+    if (currentFilter) {
+        currentFilter.textContent = i18next.t(storedFilter.toLowerCase());
+    }
+
+    updateMobileSettings();
+});
 // Chame syncSettings() dentro do seu window.onload ou i18next.init
 
     function renderView(viewKey) {
@@ -241,59 +277,71 @@ btnConfirmReset.addEventListener('click', () => {
     const selectedLang = this.value;
     localStorage.setItem('language', selectedLang);
 
+
     i18next.changeLanguage(selectedLang, () => {
         updateDashboardContent();
+        updateUserGreeting();
 
         const currentView = localStorage.getItem('dashboardView') || 'chroma';
         renderView(currentView);
 
         const langKey = languageLabels[selectedLang] || 'english';
-        currentLang.textContent = i18next.t(langKey);
+
+        if (currentLang) {
+            currentLang.textContent = i18next.t(langKey);
+        }
+
+        const freshColorblind = localStorage.getItem('colorblind');
+        const freshType = localStorage.getItem('colorblindType');
+        const freshFilter = localStorage.getItem('currentFilter') || 'none';
 
         if (currentType) {
-            if (colorblind === 'yes') {
-                currentType.textContent = type ? i18next.t(type) : i18next.t('yes');
+            if (freshColorblind === 'yes') {
+                currentType.textContent = freshType ? i18next.t(freshType) : i18next.t('yes');
             } else {
                 currentType.textContent = i18next.t('no');
             }
         }
 
         if (currentFilter) {
-            currentFilter.textContent = type ? i18next.t(type) : i18next.t('none');
+            currentFilter.textContent = freshFilter ? i18next.t(freshFilter) : i18next.t('none');
         }
+
+        updateMobileSettings();
     });
 
     syncLocalPreferencesToCloud();
 });
     }
-});
 
-document.addEventListener('DOMContentLoaded', function() {
     const openBtn = document.getElementById('openSettings');
-    const closeBtn = document.getElementById('closeSettings');
-    const overlay = document.getElementById('settingsOverlay');
+const closeBtn = document.getElementById('closeSettings');
+const overlay = document.getElementById('settingsOverlay');
 
-    if (openBtn && overlay) {
-        openBtn.addEventListener('click', () => {
-            overlay.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            updateMobileSettings(); // Atualiza os dados ao abrir
-        });
-    }
+if (openBtn && overlay) {
+    openBtn.addEventListener('click', () => {
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        updateMobileSettings();
+    });
+}
 
-    if (closeBtn && overlay) {
-        closeBtn.addEventListener('click', () => {
-            overlay.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-    }
+if (closeBtn && overlay) {
+    closeBtn.addEventListener('click', () => {
+        overlay.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    });
+}
 
-    overlay?.addEventListener('click', (e) => {
+if (overlay) {
+    overlay.addEventListener('click', (e) => {
         if (e.target === overlay) {
             overlay.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
     });
+}
+
 });
 
 function updateMobileSettings() {

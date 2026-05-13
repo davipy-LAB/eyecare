@@ -360,6 +360,34 @@ body::before {
     font-size: 0.95rem;
 }
 
+
+.logout-btn {
+    min-height: 42px;
+    padding: 0 16px;
+    border-radius: 14px;
+    white-space: nowrap;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 77, 77, 0.14);
+    border-color: rgba(255, 77, 77, 0.35);
+    color: #fca5a5;
+}
+
+/* Corrige artefato visual nos botões gerados por JS */
+.btn-feature {
+    transform: none !important;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    isolation: isolate;
+    contain: paint;
+}
+
+.btn-feature:hover {
+    transform: none !important;
+    box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.35) inset;
+}
+
 .btn {
     min-height: 52px;
     padding: 0 22px;
@@ -528,6 +556,20 @@ body::before {
     margin-top: 0;
     font-size: 1.1rem;
     color: var(--primary);
+}
+
+/* Corrige artefato visual nos botões gerados por JS */
+.btn-feature {
+    transform: none !important;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    isolation: isolate;
+    contain: paint;
+}
+
+.btn-feature:hover {
+    transform: none !important;
+    box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.35) inset;
 }
 
 /* Containers e Cards */
@@ -1372,5 +1414,119 @@ body::before {
     .dynamic-contrast-page .setting-item,
     .dynamic-contrast-page .preview-box {
         padding: 18px;
+    }
+}
+
+/* =========================================
+   FIX: Chrome hover repaint artifacts
+   ========================================= */
+
+/* Remove blur pesado dos cards principais */
+.dashboard-card,
+.content-block,
+.setting-item,
+.setting-item-vertical,
+.preview-box {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Evita que o hover do botão gere repaint gigante */
+.btn-feature,
+.btn-feature:hover,
+.btn-feature:focus,
+.btn-feature:active {
+    transform: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    will-change: auto !important;
+    contain: paint;
+}
+
+/* Mantém hover bonito, mas sem composição pesada */
+.btn-feature:hover {
+    background: rgba(74, 222, 128, 0.92) !important;
+    color: #04080c !important;
+    border-color: rgba(74, 222, 128, 0.95) !important;
+}
+
+/* Só a seta se move, não o botão inteiro */
+.btn-feature svg {
+    transition: transform 0.2s ease;
+}
+
+.btn-feature:hover svg {
+    transform: translateX(5px) !important;
+    stroke: #04080c !important;
+}
+
+/* Se modo conforto estiver ativo, evita filtrar a página inteira */
+body.comfort-mode .page-shell {
+    filter: none !important;
+}
+
+.dashboard-user-greeting {
+    margin: 10px 0 0;
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* =========================================
+   LOGOUT BUTTON — DESKTOP + MOBILE FIX
+   ========================================= */
+
+.logout-btn {
+    min-height: 42px;
+    height: 42px;
+    padding: 0 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 77, 77, 0.28);
+    background: rgba(255, 77, 77, 0.08);
+    color: #fca5a5;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 750;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    box-shadow: none;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 77, 77, 0.16);
+    border-color: rgba(255, 77, 77, 0.48);
+    color: #fecaca;
+    transform: none;
+    box-shadow: 0 0 0 4px rgba(255, 77, 77, 0.08);
+}
+
+/* Mobile: não deixa o logout virar blocão gigante */
+@media (max-width: 768px) {
+    .dashboard-links .logout-btn {
+        width: auto !important;
+        min-width: 118px;
+        max-width: max-content;
+        align-self: center;
+        padding-inline: 22px;
+        margin-top: 2px;
+    }
+}
+
+/* Mobile estreito: deixa elegante e centralizado */
+@media (max-width: 420px) {
+    .dashboard-links .logout-btn {
+        width: 100% !important;
+        max-width: 260px;
+        min-height: 48px;
+        border-radius: 16px;
+        margin-inline: auto;
     }
 }

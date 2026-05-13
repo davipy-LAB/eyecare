@@ -85,5 +85,21 @@
             "comfort_desc": "Réduit la lumière bleue grâce à des tons sépia doux.",
             "explain_title": "Aperçu en temps réel",
             "explain_content": "Ce texte explique comment ces modifications affectent la lisibilité. L'objectif est de réduire la fatigue oculaire lors de longues sessions de lecture.",
-            "back_to_dashboard": "Retour au tableau de bord"
+            "back_to_dashboard": "Retour au tableau de bord",
+            "account_optional": "Facultatif",
+            "account_title": "Enregistrer vos préférences",
+            "account_text": "Créez un compte pour synchroniser EyeCare sur le site web et l'extension.",
+            "login": "Connexion",
+            "register": "S'inscrire",
+            "continue_without_account": "Continuer sans compte",
+            "email": "E-mail",
+            "password": "Mot de passe",
+            "username": "Nom d'utilisateur",
+            "logging_in": "Connexion en cours... ",
+            "creating_account": "Création du compte... ",
+            "login_success": "Connexion réussie. ",
+            "register_success": "Compte créé avec succès. ",
+            "logout": "Deconnexion",
+            "hello_user": "Bonjour",
+            "welcome_user": "Bienvenue chez EyeCare !"
 }
