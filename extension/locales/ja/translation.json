@@ -14,5 +14,30 @@
   },
   "notification_message": {
     "message": "6メートル先にあるものを20秒間見つめてください。"
-  }
+  },
+  "dynamic_contrast": "ダイナミックコントラスト",
+  "dynamic_contrast_text": "現在のページのコントラストを調整します。",
+  "contrast": "コントラストの強さ",
+  "comfort_mode": "コンフォートモード",
+  "comfort_desc": "色の視覚的な強さを抑えます。",
+  "account_title": "EyeCareアカウント",
+  "account_text": "アカウントを作成して、ウェブサイトと拡張機能でEyeCareを同期させましょう。",
+  "login": "ログイン",
+  "email": "メールアドレス",
+  "password": "パスワード",
+  "sync_now": "今すぐ同期",
+  "logout": "ログアウト",
+  "logged_as": "{{user}} としてログイン中",
+"eyecare_user": "EyeCareユーザー",
+"msg_fill_email_password": "メールアドレスとパスワードを入力してください。",
+"msg_server_waking_login": "ログイン中... サーバーの起動に数秒かかる場合があります。",
+"msg_login_syncing": "ログインしました。設定を同期しています...",
+"msg_login_success_synced": "ログインが完了し、設定が同期されました。",
+"msg_server_preparing": "もう少しです！サーバーを準備しています...",
+"msg_login_invalid": "ログインできませんでした。メールアドレスとパスワードを確認してください。",
+"msg_syncing_cloud": "クラウドと同期しています...",
+"msg_cloud_synced": "設定が同期されました。",
+"msg_sync_now_loading": "同期中...",
+"msg_sync_now_start": "サーバーを起動して同期しています...",
+"msg_sync_failed_local": "現在同期できません。ローカル設定は保存されています。"
 }

@@ -4,6 +4,11 @@
   "version": "1.0",
   "description": "A Chrome extension to simulate color blindness filters on web pages.",
   "permissions": ["storage", "activeTab", "notifications", "alarms"],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "http://127.0.0.1:8000/*",
+    "https://eyecare-prci.onrender.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -22,9 +27,9 @@
     "128": "icons/icon128.png"
   },
   "web_accessible_resources": [
-  {
-    "resources": ["locales/*/*.json"],
-    "matches": ["<all_urls>"]
-  }
-]
+    {
+      "resources": ["locales/*/*.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

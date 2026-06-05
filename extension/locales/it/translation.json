@@ -14,5 +14,30 @@
   },
   "notification_message": {
     "message": "Fissa qualcosa a 6 metri di distanza per 20 secondi."
-  }
+  },
+  "dynamic_contrast": "Contrasto dinamico",
+  "dynamic_contrast_text": "Regola il contrasto della pagina corrente.",
+  "contrast": "Intensità del contrasto",
+  "comfort_mode": "Modalità comfort",
+  "comfort_desc": "Riduce l'intensità visiva dei colori.",
+  "account_title": "Account EyeCare",
+  "account_text": "Accedi per sincronizzare EyeCare tra il sito web e l'estensione.",
+  "login": "Accedi",
+  "email": "E-mail",
+  "password": "Password",
+  "sync_now": "Sincronizza ora",
+  "logout": "Esci",
+  "logged_as": "Accesso effettuato come {{user}}",
+"eyecare_user": "utente EyeCare",
+"msg_fill_email_password": "Inserisci email e password.",
+"msg_server_waking_login": "Accesso in corso... il server potrebbe impiegare alcuni secondi ad avviarsi.",
+"msg_login_syncing": "Accesso riuscito. Sincronizzazione delle preferenze...",
+"msg_login_success_synced": "Accesso completato e preferenze sincronizzate.",
+"msg_server_preparing": "Ci siamo quasi! Preparazione del server...",
+"msg_login_invalid": "Accesso non riuscito. Controlla email e password.",
+"msg_syncing_cloud": "Sincronizzazione con il cloud...",
+"msg_cloud_synced": "Preferenze sincronizzate.",
+"msg_sync_now_loading": "Sincronizzazione...",
+"msg_sync_now_start": "Avvio del server e sincronizzazione...",
+"msg_sync_failed_local": "Impossibile sincronizzare ora. Le preferenze locali restano salvate."
 }

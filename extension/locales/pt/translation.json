@@ -14,5 +14,30 @@
   },
   "notification_message": {
     "message": "Olhe para algo a 6 metros de distância por 20 segundos."
-  }
+  },
+  "dynamic_contrast": "Contraste Dinâmico",
+"dynamic_contrast_text": "Ajuste o contraste da página atual.",
+"contrast": "Intensidade do contraste",
+"comfort_mode": "Modo conforto",
+"comfort_desc": "Reduz a agressividade visual das cores.",
+"account_title": "Conta EyeCare",
+"account_text": "Faça login para sincronizar suas configurações em todos os dispositivos.",
+"login": "Entrar",
+"email": "E-mail",
+"password": "Senha",
+"sync_now": "Sincronizar agora",
+"logout": "Sair",
+"logged_as": "Logado como {{user}}",
+"eyecare_user": "usuário EyeCare",
+"msg_fill_email_password": "Preencha e-mail e senha.",
+"msg_server_waking_login": "Entrando... o servidor pode levar alguns segundos para acordar.",
+"msg_login_syncing": "Login feito. Sincronizando preferências...",
+"msg_login_success_synced": "Login realizado e preferências sincronizadas.",
+"msg_server_preparing": "Quase lá! Preparando o servidor...",
+"msg_login_invalid": "Erro ao entrar. Verifique e-mail e senha.",
+"msg_syncing_cloud": "Sincronizando com a nuvem...",
+"msg_cloud_synced": "Preferências sincronizadas.",
+"msg_sync_now_loading": "Sincronizando...",
+"msg_sync_now_start": "Acordando servidor e sincronizando...",
+"msg_sync_failed_local": "Não consegui sincronizar agora. Preferências locais continuam salvas."
 }

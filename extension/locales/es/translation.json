@@ -6,13 +6,38 @@
   "filter_deuteranopia": "Deuteranopia",
   "filter_tritanopia": "Tritanopia",
   "pause_title": "Pausas programadas",
-  "pause_desc": "Regla 20-20-20 para la fatiga",
+  "pause_desc": "Regla 20-20-20 contra la fatiga",
   "next_pause": "Próxima pausa en {{minutes}} min",
   "status_active": "Estado: Activo",
   "notification_title": {
-    "message": "¡Es hora de descansar la vista! 🌿"}
-  ,
+    "message": "¡Es hora de descansar la vista! 🌿"
+  },
   "notification_message": {
-    "message": "Mira algo que esté a 6 metros de distancia durante 20 segundos."
-  }
+    "message": "Mira un objeto situado a 6 metros de ti durante 20 segundos."
+  },
+  "dynamic_contrast": "Contraste dinámico",
+  "dynamic_contrast_text": "Ajusta el contraste de la página actual.",
+  "contrast": "Intensidad del contraste",
+  "comfort_mode": "Modo confort",
+  "comfort_desc": "Reduce la intensidad visual de los colores.",
+  "account_title": "Cuenta EyeCare",
+  "account_text": "Inicia sesión para sincronizar tus preferencias en todos los dispositivos.",
+  "login": "Iniciar sesión",
+  "email": "Correo electrónico",
+  "password": "Contraseña",
+  "sync_now": "Sincronizar ahora",
+  "logout": "Cerrar sesión",
+  "logged_as": "Conectado como {{user}}",
+"eyecare_user": "usuario de EyeCare",
+"msg_fill_email_password": "Completa tu correo y contraseña.",
+"msg_server_waking_login": "Iniciando sesión... el servidor puede tardar unos segundos en despertar.",
+"msg_login_syncing": "Inicio de sesión correcto. Sincronizando preferencias...",
+"msg_login_success_synced": "Inicio de sesión completado y preferencias sincronizadas.",
+"msg_server_preparing": "¡Casi listo! Preparando el servidor...",
+"msg_login_invalid": "Error al iniciar sesión. Verifica tu correo y contraseña.",
+"msg_syncing_cloud": "Sincronizando con la nube...",
+"msg_cloud_synced": "Preferencias sincronizadas.",
+"msg_sync_now_loading": "Sincronizando...",
+"msg_sync_now_start": "Despertando el servidor y sincronizando...",
+"msg_sync_failed_local": "No se pudo sincronizar ahora. Las preferencias locales siguen guardadas."
 }

@@ -6,13 +6,38 @@
   "filter_deuteranopia": "Deuteranopia",
   "filter_tritanopia": "Tritanopia",
   "pause_title": "Scheduled Breaks",
-  "pause_desc": "20-20-20 Rule for Eye Strain",
+  "pause_desc": "20-20-20 Rule to Prevent Eye Strain",
   "next_pause": "Next break in {{minutes}} min",
   "status_active": "Status: Active",
   "notification_title": {
-    "message": "Time to rest your eyes! 🌿"
+    "message": "It's time to rest your eyes! 🌿"
   },
   "notification_message": {
-    "message": "Look at something 6 meters away for 20 seconds."
-  }
+    "message": "Look at an object 6 meters away from you for 20 seconds."
+  },
+  "dynamic_contrast": "Dynamic contrast",
+  "dynamic_contrast_text": "Adjust the contrast of the current page.",
+  "contrast": "Contrast intensity",
+  "comfort_mode": "Comfort mode",
+  "comfort_desc": "Reduces the visual intensity of colors.",
+  "account_title": "Account EyeCare",
+  "account_text": "Create an account to sync EyeCare across the website and extension.",
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+    "sync_now": "Sync now",
+    "logout": "Logout",
+    "logged_as": "Logged in as {{user}}",
+"eyecare_user": "EyeCare user",
+"msg_fill_email_password": "Fill in your email and password.",
+"msg_server_waking_login": "Signing in... the server may take a few seconds to wake up.",
+"msg_login_syncing": "Login successful. Syncing preferences...",
+"msg_login_success_synced": "Login completed and preferences synced.",
+"msg_server_preparing": "Almost there! Preparing the server...",
+"msg_login_invalid": "Login failed. Check your email and password.",
+"msg_syncing_cloud": "Syncing with the cloud...",
+"msg_cloud_synced": "Preferences synced.",
+"msg_sync_now_loading": "Syncing...",
+"msg_sync_now_start": "Waking up the server and syncing...",
+"msg_sync_failed_local": "Could not sync right now. Local preferences are still saved."
 }

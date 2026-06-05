@@ -24,11 +24,90 @@
       </select>
     </div>
 
+    <div class="settings-card" id="auth-card">
+      <div class="setting-header">
+        <div class="setting-info">
+          <span class="setting-title" data-i18n="account_title">Conta EyeCare</span>
+          <span class="setting-desc" data-i18n="account_text">
+            Entre para sincronizar suas preferências.
+          </span>
+        </div>
+      </div>
+
+      <div id="auth-logged-out">
+        <input class="auth-input" type="email" id="login-email" placeholder="Email" data-i18n-placeholder="email">
+        <input class="auth-input" type="password" id="login-password" placeholder="Password" data-i18n-placeholder="password">
+
+        <button type="button" class="auth-btn" id="login-button" data-i18n="login">
+          Entrar
+        </button>
+      </div>
+
+      <div id="auth-logged-in" class="hidden">
+        <span class="setting-desc" id="extension-user-label"></span>
+
+        <div class="auth-actions">
+          <button type="button" class="auth-btn" id="sync-now-button" data-i18n="sync_now">
+            Sincronizar agora
+          </button>
+
+          <button type="button" class="auth-btn danger" id="logout-button" data-i18n="logout">
+            Sair
+          </button>
+        </div>
+      </div>
+
+      <p class="auth-message" id="auth-message"></p>
+    </div>
+
     <div class="filter-grid">
       <button id="none" class="filter-btn" data-i18n="filter_none">Nenhum</button>
       <button id="protanopia" class="filter-btn" data-i18n="filter_protanopia">Protanopia</button>
       <button id="deuteranopia" class="filter-btn" data-i18n="filter_deuteranopia">Deuteranopia</button>
       <button id="tritanopia" class="filter-btn" data-i18n="filter_tritanopia">Tritanopia</button>
+    </div>
+
+    <div class="settings-card">
+      <div class="setting-header">
+        <div class="setting-info">
+          <span class="setting-title" data-i18n="dynamic_contrast">Contraste Dinâmico</span>
+          <span class="setting-desc" data-i18n="dynamic_contrast_text">
+            Ajuste o contraste da página atual.
+          </span>
+        </div>
+      </div>
+
+      <div class="contrast-control">
+        <label for="contrast-slider" class="setting-desc" data-i18n="contrast">
+          Intensidade do contraste
+        </label>
+
+        <div class="contrast-row">
+          <input
+            type="range"
+            id="contrast-slider"
+            min="100"
+            max="130"
+            value="100"
+            step="1"
+          >
+          <span id="contrast-value">100%</span>
+        </div>
+      </div>
+
+      <div class="setting-header comfort-extension-row">
+        <div class="setting-info">
+          <span class="setting-title" data-i18n="comfort_mode">Modo conforto</span>
+          <span class="setting-desc" data-i18n="comfort_desc">
+            Reduz a agressividade visual das cores.
+          </span>
+        </div>
+
+        <label class="switch">
+          <input type="checkbox" id="comfort-mode">
+          <span class="slider"></span>
+        </label>
+      </div>
     </div>
 
     <div class="settings-card">

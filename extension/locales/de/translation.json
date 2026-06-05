@@ -1,18 +1,43 @@
 {
   "app_name": "EyeCare",
-  "filters_title": "Visuelle Filter",
-  "filter_none": "Kein Filter",
+  "filters_title": "Sehfilter",
+  "filter_none": "Keine",
   "filter_protanopia": "Protanopie",
   "filter_deuteranopia": "Deuteranopie",
   "filter_tritanopia": "Tritanopie",
   "pause_title": "Geplante Pausen",
   "pause_desc": "20-20-20-Regel gegen Ermüdung",
-  "next_pause": "Nächste Pause in {{minutes}} Min.",
+  "next_pause": "Nächste Pause in {{minutes}} Minuten",
   "status_active": "Status: Aktiv",
   "notification_title": {
-    "message": "Zeit, die Augen auszuruhen! 🌿"
+    "message": "Es ist Zeit, Ihre Augen auszuruhen! 🌿"
   },
   "notification_message": {
-    "message": "Schauen Sie 20 Sekunden lang auf etwas, das 6 Meter entfernt ist."
-  }
+    "message": "Schauen Sie 20 Sekunden lang auf einen Gegenstand, der 6 Meter von Ihnen entfernt ist."
+  },
+  "dynamic_contrast": "Dynamischer Kontrast",
+  "dynamic_contrast_text": "Passen Sie den Kontrast der aktuellen Seite an.",
+  "contrast": "Kontraststärke",
+  "comfort_mode": "Komfortmodus",
+  "comfort_desc": "Reduziert die visuelle Intensität der Farben.",
+  "account_title": "Konto EyeCare",
+  "account_text": "Melden Sie sich an, um Ihre Einstellungen auf allen Geraeten zu synchronisieren.",
+  "login": "Anmelden",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "sync_now": "Jetzt synchronisieren",
+    "logout": "Abmelden",
+    "logged_as": "Angemeldet als {{user}}",
+"eyecare_user": "EyeCare-Benutzer",
+"msg_fill_email_password": "Bitte E-Mail und Passwort eingeben.",
+"msg_server_waking_login": "Anmeldung läuft... der Server braucht möglicherweise einige Sekunden zum Starten.",
+"msg_login_syncing": "Anmeldung erfolgreich. Einstellungen werden synchronisiert...",
+"msg_login_success_synced": "Anmeldung abgeschlossen und Einstellungen synchronisiert.",
+"msg_server_preparing": "Fast geschafft! Server wird vorbereitet...",
+"msg_login_invalid": "Anmeldung fehlgeschlagen. Prüfe E-Mail und Passwort.",
+"msg_syncing_cloud": "Synchronisierung mit der Cloud...",
+"msg_cloud_synced": "Einstellungen synchronisiert.",
+"msg_sync_now_loading": "Synchronisiere...",
+"msg_sync_now_start": "Server wird gestartet und synchronisiert...",
+"msg_sync_failed_local": "Synchronisierung derzeit nicht möglich. Lokale Einstellungen bleiben gespeichert."
 }

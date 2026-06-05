@@ -8,6 +8,12 @@
     --text-muted: #94a3b8;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
     width: 320px; /* Aumentei um pouco a largura */
     margin: 0;
@@ -217,4 +223,137 @@ input:checked + .slider:before { transform: translateX(20px); background-color: 
 
 .language-select:focus {
     border-color: var(--primary);
+}
+
+.contrast-control {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.contrast-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+#contrast-slider {
+  width: 100%;
+  accent-color: #7dd3fc;
+}
+
+#contrast-value {
+  min-width: 48px;
+  text-align: right;
+  color: var(--text-strong, #f8fafc);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.comfort-extension-row {
+  margin-top: 18px;
+}
+
+.auth-input {
+  width: 100%;
+  min-height: 38px;
+  margin-bottom: 10px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text-strong);
+  font-family: inherit;
+  outline: none;
+}
+
+.auth-input:focus {
+  border-color: var(--primary);
+}
+
+.auth-btn {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--primary);
+  color: #04080c;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.auth-btn.danger {
+  margin-top: 8px;
+  background: rgba(255, 77, 77, 0.14);
+  color: #fca5a5;
+  border-color: rgba(255, 77, 77, 0.35);
+}
+
+.auth-actions {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.auth-message {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.auth-message.error {
+  color: #fca5a5;
+}
+
+.auth-message.success {
+  color: #86efac;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===============================
+   AUTH CARD FIX
+================================ */
+
+#auth-card {
+  overflow: hidden;
+}
+
+#auth-card .setting-header {
+  margin-bottom: 14px;
+}
+
+#auth-card .setting-info {
+  min-width: 0;
+}
+
+#auth-card .setting-title,
+#auth-card .setting-desc {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+#auth-logged-out,
+#auth-logged-in {
+  width: 100%;
+  min-width: 0;
+}
+
+.auth-input {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.auth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
