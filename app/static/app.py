@@ -20,6 +20,8 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
+
+
 @app.api_route("/", response_class=HTMLResponse, methods=["GET", "HEAD"])
 async def read_root(request: Request):
     """Return the OnBoarding.html file directly to avoid Jinja2 cache issues."""
@@ -96,3 +98,12 @@ async def ideal_environment(request: Request):
     if tpl.exists():
         return HTMLResponse(tpl.read_text(encoding="utf-8") , status_code=200)
     return HTMLResponse("<h1>Ideal Environment not found</h1>", status_code=404)
+
+@app.get('/privacy-policy', response_class=HTMLResponse)
+async def privacy_policy(request: Request):
+    """Return the privacy-policy.html file."""
+    base = Path(__file__).resolve().parents[2]  # project root (f:/eyecare)
+    tpl = base / "templates" / "PrivacyPolicy.html"
+    if tpl.exists():
+        return HTMLResponse(tpl.read_text(encoding="utf-8"), status_code=200)
+    return HTMLResponse("<h1>Privacy Policy not found</h1>", status_code=404)
